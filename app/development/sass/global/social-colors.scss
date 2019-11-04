@@ -1,0 +1,30 @@
+.fb-share-button {
+  color: $facebook-blue;
+
+  &:hover, &:active, &:focus {
+    color: darken($facebook-blue, 5%) !important;
+  }
+}
+
+.twitter-share-button {
+  a {
+    color: $twitter-blue;
+
+    &:hover, &:active, &:focus, &:active:focus, &:focus:active {
+      color: darken($twitter-blue, 5%) !important;
+    }
+  }
+}
+
+.social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.fb-share-button, .twitter-share-button {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}

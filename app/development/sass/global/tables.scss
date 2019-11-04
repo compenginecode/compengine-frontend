@@ -1,0 +1,73 @@
+.table {
+  tbody, thead {
+    tr {
+      background: #FFFFFF;
+    }
+  }
+}
+
+.table-inverse {
+  tbody, thead {
+    tr {
+      background: #373a3c;
+      color: $tertiary-color;
+    }
+  }
+}
+
+.table-fixed {
+  table-layout:fixed;
+  width: 100%;
+
+  @include media-breakpoint-down(lg) {
+    tr {
+      font-size: 0.8rem;
+    }
+
+    td {
+      word-break: break-all;
+    }
+  }
+}
+
+.admin-table {
+  &-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  td {
+    max-width: 246px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+
+.sorting {
+  cursor: pointer;
+
+  &_desc, &_asc, &.fetching {
+    &:after {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      margin-left: 5px;
+    }
+  }
+
+  &_desc:after {
+    content: "\f161";
+  }
+
+  &_asc:after {
+    content: "\f160";
+  }
+
+  &.fetching:after {
+    animation: fa-spin 2s infinite linear;
+    content: "\f110";
+  }
+}

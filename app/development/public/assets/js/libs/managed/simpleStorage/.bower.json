@@ -1,0 +1,31 @@
+{
+  "name": "simpleStorage",
+  "main": "simpleStorage.min.js",
+  "version": "0.1.4",
+  "homepage": "https://github.com/andris9/simpleStorage",
+  "authors": [
+    "Andris Reinman <andris@kreata.ee>"
+  ],
+  "description": "Cross-browser key-value store database to store data locally in the browser",
+  "keywords": [
+    "JSON",
+    "localStorage",
+    "TTL"
+  ],
+  "license": "Unlicense",
+  "ignore": [
+    "tests",
+    "example",
+    "LICENSE",
+    "*.md"
+  ],
+  "_release": "0.1.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.4",
+    "commit": "0eeff2d4f62a1975d8c08194e49534d683481a51"
+  },
+  "_source": "https://github.com/andris9/simpleStorage.git",
+  "_target": "0.1.4",
+  "_originalSource": "simpleStorage"
+}

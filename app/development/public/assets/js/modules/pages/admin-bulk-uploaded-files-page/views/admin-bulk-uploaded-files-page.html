@@ -1,0 +1,45 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="admin-bulk-uploaded-files-page-container">
+
+    <div class="container admin-bulk-uploaded-files">
+
+        <div class="container">
+
+            <div class="jumbotron">
+                <h3>Bulk Uploaded Files.</h3>
+                <p>This page shows all of the files uploaded by users as part of the bulk upload process.</p>
+            </div>
+
+            <input id="search-box" class="form-control" placeholder="Search by upload date, contributor, source, category, tags, or sampling..." value="<%- searchText %>" />
+            <br>
+
+            <table class="table" id="bulk-uploaded-files-table">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th data-sort="uploadDate" class="sorting <%- sortingBy === 'uploadDate' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Upload Date</th>
+                        <th data-sort="status" class="sorting <%- sortingBy === 'status' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Status</th>
+                        <th data-sort="contributor" class="sorting <%- sortingBy === 'contributor' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Contributor</th>
+                        <th data-sort="source" class="sorting <%- sortingBy === 'source' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Source</th>
+                        <th data-sort="category" class="sorting <%- sortingBy === 'category' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Category</th>
+                        <th>Tags</th>
+                        <th data-sort="sampling" class="sorting <%- sortingBy === 'sampling' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Sampling</th>
+                        <th data-sort="batchSize" class="sorting <%- sortingBy === 'batchSize' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Batch Size</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <div id="bulk-upload-empty" style="display:none;"></div>
+        </div>
+    </div>
+
+
+    <section id="footer-container"></section>
+
+</section>

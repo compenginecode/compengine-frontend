@@ -1,0 +1,63 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card search-result">
+                <div class="card-block text-xs-left">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="time-series-thumbnail"></div>
+                            <!-- <svg class="time-series-thumbnail" xmlns="http://www.w3.org/2000/svg" width="120" height="120"> -->
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><a href="/#!visualize/<%- id %>"><%- name %></a></h4>
+                                    <a href="/#!browse/category/<%- category.uri %>" class="btn btn-black-outline"><%- category.name %></a>
+                                </div>
+                                <% if ('' !== description){ %>
+                                    <div class="col-md-12">
+                                        <% if (description.length > 200){ %>
+                                            <p data-role="short-description">
+                                                    <%- description.substring(0, 200) %>...<a data-role="short-description-read-more" class="read-more">read more</a>
+                                            </p>
+                                            <p data-role="long-description" style="display:none">
+                                                    <%- description %>
+                                            </p>
+                                        <% } else { %>
+                                            <p>
+                                                <%- description %>
+                                            </p>
+                                        <% } %>
+                                    </div>
+                                <% } %>
+                                <div class="col-md-7">
+                                    <% _.each(tags, function (tag) { %>
+                                        <a href="/#!browse/tag/<%- tag.slug %>" class="btn btn-black-outline"><%- tag.name %></a>
+                                    <% }) %>
+                                </div>
+                                <div class="col-md-5 text-right">
+                                    <a href="/#!visualize/<%- id %>" class="btn btn-black">Find Neighbours</a>
+                                    <a data-role="show-download-options" class="btn btn-black">Download</a>
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="download-holder col-md-12" style="width:100%;display:none">
+                           <div class="row">
+                                <div class="col-md-4">
+                                    <select name="export-type" id="export-type" class="form-control" value="" style="margin-top: 7px;">
+                                        <option value="csv">CSV (zipped)</option>
+                                        <option value="json">JSON</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <a data-role="download-file" data-id="<%- id %>" class="btn btn-black-outline">Download file</a>
+                                </div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

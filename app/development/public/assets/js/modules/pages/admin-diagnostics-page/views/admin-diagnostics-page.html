@@ -1,0 +1,119 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="admin-diagnostics-page-container">
+
+    <div class="container admin-diagnostics">
+
+        <div class="jumbotron">
+            <h1>Diagnostics.</h1>
+            <p>This page shows technical diagnostic information used for maintenance and monitoring</p>
+        </div>
+
+        <div class="admin-diagnostics__processes">
+            <h3>
+                Proccesses
+            </h3>
+
+            <p>
+                Below the status of each of the sub-processes of the CompEngine Project are shown.
+            </p>
+            <div class="admin-diagnostics__processes-table">
+                <table class="table">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <th>Task</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <% _.each(processes, function(item, index, parent) { %>
+                            <tr>
+                                <th scope="row">
+                                    <%= item.name %>
+                                </th>
+                                <td>
+                                    <div class="tag tag-<%- getStatusClass(item.status) %>  tag-pill">
+                                        <%= item.status %>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="admin-diagnostics__jobs">
+            <h3>
+                Feature Vector Central Measusures
+            </h3>
+
+            <p>
+                Below is the history of the last 25 asynchronous system tasks.
+            </p>
+            <table class="table">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>Histogram</th>
+                    <th>FVE Name</th>
+                    <th>FVE Mapping Id</th>
+                    <th>IQR</th>
+                    <th>Median</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <% _.each(centralMeasures.histograms, function(item, index, parent) { %>
+                        <tr>
+                            <th scope="row">
+                                <div id="histogram-<%- item.mappingId %>"></div>
+                            </th>
+                            <td>
+                                <%- item.name %>
+                            </td>
+                            <td>
+                                <%- item.mappingId %>
+                            </td>
+                            <td>
+                                <%- centralMeasures.percentiles[item.mappingId].iqr %>
+                            </td>
+                            <td>
+                                <%- centralMeasures.percentiles[item.mappingId].median %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="admin-diagnostics__statistics">
+            <h3>
+                Statistics
+            </h3>
+
+            <p>
+                Below is a summary of various technical statistics.
+            </p>
+            <div class="row admin-diagnostics__statistics-indent">
+                <div class="col-md-12">
+                    <p class="admin-admin-diagnostics__statistics-label">
+                        Elastic search documents: 400k
+                    </p>
+
+                    <p class="admin-admin-diagnostics__statistics-label">
+                        Elastic search index size: 12Gb
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <section id="footer-container"></section>
+
+</section>

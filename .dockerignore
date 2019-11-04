@@ -1,0 +1,4 @@
+app/.build-cache/
+app/out/
+app/development/
+.git/

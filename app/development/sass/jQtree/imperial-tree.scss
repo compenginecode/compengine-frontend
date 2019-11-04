@@ -1,0 +1,51 @@
+ul.jqtree-tree {
+  margin-left: -1.5rem;
+  font-family: $secondary-font;
+  font-size: 14px;
+  line-height: initial;
+  user-select: none;
+  color: #373a3c;
+
+  .jqtree-element {
+    font-size: 0.9rem;
+    padding: 5px;
+    text-overflow: ellipsis;
+
+  }
+
+  .jqtree-title {
+    word-wrap: break-word;
+    margin-left: 0;
+    color: #373a3c;
+    font-size: 14px;
+  }
+
+  li {
+
+    > .jqtree-folder {
+      margin-left: 0;
+    }
+
+    &.jqtree_common {
+      margin-left: 1.5em;
+    }
+
+    &.jqtree-selected {
+      &>.jqtree-element, &>.jqtree-element:hover {
+        background-color: $brand-primary;
+        background: $brand-primary;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+
+        .jqtree-title, .jqtree-toggler {
+          color: #FFFFFF !important;
+        }
+      }
+    }
+
+    ul {
+      &.jqtree_common {
+        margin-left: 0;
+      }
+    }
+  }
+}

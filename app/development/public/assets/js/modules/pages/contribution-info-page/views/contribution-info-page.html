@@ -1,0 +1,137 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="contribution-info-page-container">
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1>Contributing</h1>
+            <p>The success of this project is underpinned by people like you contributing data.</p>
+            
+            
+        </div>
+
+        <h3>Contributing data</h3>
+        <p>
+            <b>Single Time Series—</b> Interested in a particular piece of time-series data and how it relates
+            to other pieces of time-series data already in our library? This is easy—just find the file
+            with your data in it, upload it, and then see what happens! Once computed, you will be
+            prompted to contribute your data—please fill in the necessary metadata and you’re all done!
+            Your data is now the newest addition to our open time-series data library! <i class="far fa-smile"></i>
+        </p>
+        <p>
+            <a href="/#" class="btn btn-primary">Contribute a time series</a>
+        </p>
+
+        <p><b>Multiple Time Series—</b> Taken the time to measure a larger time-series dataset and want to
+            upload it all at once? We would love you to! To avoid spam, we require that you first enter some
+            details about the dataset you’d like to upload, and then we’ll email you a link to where you can
+            upload all of your data and assign identifying metadata. Click below to get started:
+        </p>
+        <p>
+            <a href="#" id="bulk-contribute" class="btn btn-primary btn-warning">Bulk contribute</a>
+        </p>
+        <h3>Why contribute to CompEngine?</h3>
+        <p>
+            Our goal is to provide a growing library of time-series that are measured and analyzed in science
+            and industry. This might help us to design analysis methods that work well on the types of data
+            that are actually encountered in the real world. By contributing your data—and giving it
+            comprehensive and accurate metadata—you are helping scientists build the next generation of methods
+            for finding interesting structure in a representative sample of time series! Who knows who will come
+            along next and find an interesting connection between their data and the data you upload!
+        </p>
+        <p>
+            Imagine the exciting new discoveries you could make!:
+            <ul>
+                <li>Automatically identify similar data from other domains.</li>
+                <li>Automatically connect to others with similar data.</li>
+                <li>Automatically identify time-series models with similar dynamics to your data.</li>
+            </ul>
+        </p>
+        <h3>Providing metadata</h3>
+        <p>
+            When others find connections between their data and yours, they want to know a little something
+            about what your data is: What system was measured? How was it measured?, Who did the measurement?
+            We have some basic fields of metadata that must be filled for you to upload your data, and some
+            additional ones that we would love you to fill in also.
+        </p>
+
+        <p>
+            <b>Name:</b> Give your time series a name that contains the most important, high level information about
+            your data, e.g., <em>EEG_motorcortex_Parkinsons</em> might be used to label an EEG time series taken from
+            the motor cortex of an individual with Parkinson’s disease.
+        </p>
+
+        <p>
+            <b>Source:</b> Give a name for the source of the data. If you’re a scientist, this could be the name of your lab,
+            e.g., <em>BrainLabHarvard</em>, or if you’re in industry, this could be the name of the company generating the data,
+            e.g., <em>CantBelieveItsNotButterIRS</em>; if you’ve measured your own data in your garage, then this could be your
+            own name, e.g., <em>JeanWangGarage</em>. Specifying an informative source will help you to search for your data later
+            (and help others better understand connections to your data).
+        </p>
+
+        <p>
+            <b>Description:</b> This is a chance to explain what the data is—what system was measured, how was it measured,
+            how it was processed, etc. The more detail you give here, the more useful your contribution will be to others.
+        </p>
+
+        <p>
+            <b>Sampling Rate:</b> CompEngine generically assumes that your data was measured from uniform sampling of some
+            system through time. If you know what the sampling rate of your data is, please enter it here. This could be
+            very fast for EEG data (2000 samples per second, or 2 kHz) or very slow for some yearly inflation rate data (1 sample per year).
+        </p>
+
+        <p>
+            <b>Category:</b> The most high-level description of your data is the ‘category’ you assign it to. You can select a
+            category from the hierarchical list provided (please use the most specific possible subcategory for your data),
+            or if you believe your data fits better into a new category, please use the text box to suggest a new category.
+        </p>
+
+        <p>
+            <b>Tags:</b> Tags allow you to add additional keywords to your data that might help you to identify your data,
+            in addition to its category and source.
+        </p>
+        <h3>Supported file types and data processing</h3>
+        <p>
+            CompEngine takes aim at time series data, where each time series is represented simply as an ordered list of numbers
+            (univariate sequential data). You can upload time-series data in any of the following formats:
+        </p>
+        <ul>
+            <li><b>Delimited text file</b> using either <b>.txt</b> or <b>.csv</b> file extension. We support comma, tab, and line-separated text files (Windows, UNIX, & OSX formats).</li>
+            <li><b>Excel file</b> using either <b>.xlsx</b> or <b>.xls</b> file formats. We will read in only the first column of the spreadsheet as sequential time-series data.</li>
+            <li>
+                <b>Audio files</b> in either MP3 (<b>.mp3</b>) or (<b>.wav</b>) formats. Audio files are converted to time series using
+                <a href="https://github.com/jasny/audio" target="_blank">Jasny Audio</a> and <a href="http://sox.sourceforge.net/" target="_blank">SoX</a>.
+                This process uses the first channel of the audio file with floating point encoding. Note that the sample rate is dynamically chosen, with a minimum rate of 4k/s.
+            </li>
+        </ul>
+        <p>
+            Note that if your data contains multiple columns, we will only analyze the first column of data.
+        </p>
+        <h6>Length Restriction</h6>
+        <p>
+            If your data contains more than 10,000 samples then we will only analyze the first 10,000 samples. This length threshold was set to keep computation times manageable, but if you would like to analyze longer time series, you can do so yourself using our [[software]][[href=github-hctsa]].
+        </p>
+        <h3>Privacy Policy <i class="fa fa-unlock"></i></h3>
+        <p>
+            Data uploaded to CompEngine will not be stored, unless the user opts in to the contribution process.
+            When contributing, users should ensure that they have the rights to share the data and to assign
+            the "no rights reserved" <a href="https://creativecommons.org/share-your-work/public-domain/cc0" target="_blank">CC0 license</a>
+            to their uploaded data. More Information about the CC0 license can be found here:
+            <a href="https://creativecommons.org/share-your-work/public-domain/cc0" target="_blank">https://creativecommons.org/share-your-work/public-domain/cc0</a>.
+        </p>
+        <h3>Citation Policy</h3>
+        <p>
+            If you use CompEngine, please cite our <a href="/#!the-research">relevant papers</a>.
+        </p>
+    </div>
+
+    <div style="height: 100px"></div>
+    <section id="footer-container"></section>
+
+</section>

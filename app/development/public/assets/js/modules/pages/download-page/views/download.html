@@ -1,0 +1,81 @@
+<% var filesAvailable = true; %>
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- About page content -->
+<section id="download-page-container">
+
+    <div class="container text-xs-left about-page">
+
+        <section id="default">
+            <h1 class="text-xs-center">Download the data</h1>
+            <div class="col-md-8 offset-md-2">
+                <p>
+                    One of the aims of CompEngine is to assemble a living library of time-series data that will allow
+                    us to better understand the structure of the time series that we measure from the world.
+                    All data stored within the CompEngine application is publically available under the
+                    <a href="https://creativecommons.org/share-your-work/public-domain/cc0" target="_blank">CC0 license</a>.
+                </p>
+                <p>
+                    If you would like to analyze the current time-series data library (updated daily), please select a
+                    desired format and enter your email below. We will send you a download link to this address.
+                </p>
+                <section id="download-form">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="email-address">Email (where we'll send the download link)</label>
+                            <input type="text" class="form-control" id="email-address" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="alert alert-danger" data-error="email-address-error" style="display: none;"></div>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="export-type">File format</label>
+                            <select name="export-type" id="export-type" class="form-control">
+                                <%
+                                    var sizesByKey = Object.keys(exportedDataSizes);
+                                    var count = 0;
+                                    // Sort the array alphabetically
+                                    sizesByKey.sort();
+                                    sizesByKey.forEach(function(key) {
+                                        var value = exportedDataSizes[key];
+                                        var uppercase = key.toLocaleUpperCase();
+                                        var byteSized = byteToSize(value);
+
+                                        if (null !== value) { %>
+                                            <option value="<%- key %>"><%- uppercase %> (<%- byteSized %>)</option>
+                                        <%
+                                        count++;
+                                        }
+                                    });
+
+                                    if (count === 0) { filesAvailable = false; %>
+                                        <option disabled selected>Sorry, but there are no files avaliable right now.</option>
+                                    <%
+                                    }
+
+                                %>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <button class="btn btn-primary" id="submit-btn" <% if(!filesAvailable) { %>disabled<% } %>>Email me the download link</button>
+                        </div>
+                        <div class="alert alert-success col-md-8" id="success-message" style="display: none">
+                            Thanks for your request! A download link has been emailed to you.
+                        </div>
+                        <div class="alert alert-danger col-md-8" id="error-message" style="display: none"></div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section id="loader"></section>
+
+    </div>
+
+    <section id="footer-container"></section>
+
+</section>

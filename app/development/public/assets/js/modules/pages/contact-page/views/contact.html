@@ -1,0 +1,74 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- About page content -->
+<section id="contact-page-container">
+
+    <div class="container text-xs-left about-page">
+
+        <section id="default">
+            <h1 class="text-xs-center">Contact</h1>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+
+                    <p class="text-xs-center">
+                        Be sure to follow us on Twitter <a href="https://twitter.com/compTimeSeries" target="_blank"><b>@compTimeSeries</b></a> for the latest updates.
+                        If you have any questions or feedback, please get in touch through the form below!
+                    </p>
+
+                    <section id="contact-form">
+                        <div class="row">
+                            <div class="form-group col-md-8 offset-md-2">
+                                <label for="name">
+                                    Name
+                                </label>
+                                <input class="form-control" type="text" id="name" />
+                                <div class="alert alert-danger" id="name-error" style="display: none;margin-top:10px;"></div>
+                            </div>
+                            <div class="form-group col-md-8 offset-md-2">
+                                <label for="email-address">
+                                    Email
+                                </label>
+                                <input type="text" class="form-control" id="email-address" />
+                                <div class="alert alert-danger" id="email-error" style="display: none;margin-top:10px;"></div>
+                            </div>
+                            <div class="form-group col-md-8 offset-md-2">
+                                <label for="message">
+                                    Message
+                                </label>
+                                <textarea name="message" id="message" rows="10" class="form-control"></textarea>
+                                <div class="alert alert-danger" id="message-error" style="display: none;margin-top:10px;"></div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <div class="row">
+                                    <div class="col-md-4 offset-md-2 col-xs-6">
+                                        <label for="send-copy">
+                                            <input type="checkbox" name="send-copy" id="send-copy" />
+                                            Send a copy to yourself
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4 text-xs-right col-xs-6">
+                                        <button class="btn btn-primary" id="send-btn">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert alert-success col-md-8 offset-md-2" id="success-message" style="display: none">
+                                Thanks for getting in touch! We've received your message.
+                            </div>
+                            <div class="alert alert-danger col-md-8 offset-md-2" id="error-message" style="display: none"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section id="loader"></section>
+
+    </div>
+
+    <section id="footer-container"></section>
+
+</section>

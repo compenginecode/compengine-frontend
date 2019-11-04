@@ -1,0 +1,34 @@
+.tag {
+  /** Font styling **/
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 100%;
+  text-transform: uppercase;
+  font-family: Open Sans,sans-serif;
+  font-weight: 400;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+
+  /** Element styling **/
+  outline: 0 none;
+  padding: 10px 15px;
+  margin-bottom: 1rem;
+
+}
+
+.tag-user-generated {
+  //background: #ffaac1;
+  background: #886cab;
+}
+
+.tag-block {
+  border-radius:0;
+
+  .fa-times {
+    margin-left: 7px;
+    cursor: pointer;
+  }
+}
+
+.tag .btn {
+  vertical-align: baseline;
+}

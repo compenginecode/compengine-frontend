@@ -1,0 +1,17 @@
+.ui-widget {
+  z-index: 1051;
+  font-family: $secondary-font;
+  font-size: 14px;
+  line-height: initial;
+  max-height: 120px;
+  overflow: auto;
+
+  &.ui-widget-content {
+    border-top: 0;
+
+    .ui-state-active {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: $brand-primary;
+    }
+  }
+}

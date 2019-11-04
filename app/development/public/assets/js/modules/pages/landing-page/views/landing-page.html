@@ -1,0 +1,74 @@
+<% var url = encodeURIComponent(GLOBALS.appUrl + "/#!") %>
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="landing-page-container">
+
+    <div class="container text-xs-center landing-page">
+
+        <section id="default" style="margin-bottom:0px;">
+            <h1>
+                CompEngine.
+            </h1>
+
+            <p class="lead">
+                A self-organizing database of time-series data
+            </p>
+
+            <div class="typed">
+                <p class="secondary-lead" typed text="A self-organizing database of time-series data"></p>
+            </div>
+
+            <div class="row button-row center" >
+                <a class="btn btn-black-outline margin-right-20" href="/#!about">
+                    Learn more
+                </a>
+
+                <a class="btn btn-black" href="/#!browse">
+                    Explore data
+                </a>
+            </div>
+
+            <div class="row center" style="margin-top: 30px; margin-bottom: 30px;">
+                <div class="col-sm-10 col-sm-offset-1">
+                    Welcome to CompEngine! This website allows you to upload time-series data and interactively visualize similar data that have been measured by others!
+                    <a href="/#!about">Learn more</a>, or jump right in by&nbsp;<a href="#" data-role="open-file-dialog">uploading your own time-series data</a>, or&nbsp;<a href="/#!browse">exploring our existing collection</a>!
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6" data-region="infographic"></div>
+                <div class="col-sm-6" style="display:flex;align-content:center;">
+                    <section id="dropzone-container" class="center"></section>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="loader" style="display: none;"></section>
+
+        <section data-role="content" class="social-container" style="margin-bottom: 100px;">
+            <div class="fb-share-button">
+                <a href="https://www.facebook.com/CompEngine/" target="_blank"><i class="fa fa-facebook-official fa-2x"></i></a>
+            </div>
+            <div class="twitter-share-button">
+                <a href="https://twitter.com/compTimeSeries" target="_blank">
+                    <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            </div>
+            <div class="twitter-share-button">
+                <a href="https://github.com/benfulcher/hctsa" target="_blank">
+                    <i class="fa fa-github fa-2x"></i>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <section id="footer-container"></section>
+
+</section>

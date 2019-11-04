@@ -1,0 +1,48 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="admin-bulk-uploaded-files-page-container">
+
+    <div class="container admin-bulk-uploaded-files">
+
+        <div class="container">
+
+            <div class="jumbotron">
+                <h3>Moderate New Time Series</h3>
+                <p>This page allows you to keep or remove new time series submissions.</p>
+            </div>
+
+            <em>Press enter to search</em>
+            <input id="search-box" class="form-control" placeholder="Search by name, status, contributor, description, category, source, tag, size, sampling unit or rate, id..." value="<%- searchText %>" />
+            <br>
+            <div style="margin-bottom:10px">
+                    <a data-role="select-all" class="btn btn-xs btn-black-outline ">Select all</a>
+                    <a data-role="bulk-approve" class="btn btn-xs btn-black-outline" style="display:none">Bulk approve</a>
+                    <a data-role="bulk-reject" class="btn btn-xs btn-black-outline" style="display:none">Bulk reject</a>
+                    <span data-role="approval-counter" style="margin-left:10px; display:none">Starting bulk process...</span>
+            </div>
+
+
+            <div class="admin-table-container">
+                <table class="table admin-table" id="search-timeseries-table">
+                    <thead class="thead-inverse"></thead>
+                </table>
+            </div>
+
+            <div id="no-data"></div>
+
+            <div id="pagination-links"></div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+    <section id="footer-container"></section>
+
+</section>

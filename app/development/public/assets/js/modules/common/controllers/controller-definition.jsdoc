@@ -1,0 +1,9 @@
+/**
+ *  Controllers Definition
+ *
+ *  Controllers are logic controllers that can have shared logic between different parts around the app
+ *
+ * @type {*}
+ * @extends Marionette.Object
+ * @namespace Controllers
+ */

@@ -1,0 +1,41 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="admin-bulk-uploaded-files-page-container">
+
+    <div class="container admin-bulk-uploaded-files">
+
+        <div class="container">
+
+            <div class="jumbotron">
+                <h3>Manage Contributors</h3>
+                <p>
+                    Here you can delete contributor records.
+                    Delete a contributor record if the contributor no longer wants to be contactable.
+                </p>
+            </div>
+
+            <input id="search-box" class="form-control" placeholder="Search by name or email..." value="<%- searchText %>" />
+            <br>
+
+            <table class="table table-editable" id="contributors-table">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th data-sort="id" class="sorting <%- sortingBy === 'id' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">ID</th>
+                        <th data-sort="name" class="sorting <%- sortingBy === 'name' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Name</th>
+                        <th data-sort="email" class="sorting <%- sortingBy === 'email' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+
+    <section id="footer-container"></section>
+
+</section>

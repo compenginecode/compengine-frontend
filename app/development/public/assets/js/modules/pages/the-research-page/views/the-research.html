@@ -1,0 +1,110 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- About page content -->
+<section id="about-page-container">
+
+    <div class="container text-xs-left about-page">
+
+        <section id="default">
+            <h1 class="text-xs-center">The Research Behind CompEngine</h1>
+            <div class="col-md-8 offset-md-2">
+                <p>
+                    The vision of a comparison engine for data analysis has developed over many years
+                    starting with a <a href="http://rsif.royalsocietypublishing.org/content/10/83/20130048" target="_blank">paper</a>
+                    in Royal Society Interface. The engine behind this website is based around our work
+                    on time-series analysis, which is described below.
+                </p>
+                <h3>The software</h3>
+                <p>
+                    The engine underlying this website is based on software for performing highly comparative
+                    time-series analysis called hctsa (highly comparative time-series analysis). This Matlab-based
+                    software allows users to apply and compare the performance of thousands of scientific time-series
+                    analysis methods on their data and is freely-available for non-commercial use on
+                    <a href="https://github.com/benfulcher/hctsa" target="_blank">github</a>, and is accompanied by comprehensive
+                    online documentation on <a href="https://legacy.gitbook.com/book/hctsa-users/hctsa-manual/details" target="_blank">gitbook</a>
+                    and a <a href="https://doi.org/10.1016/j.cels.2017.10.001" target="_blank">journal article</a>. 
+                </p>
+                <p class="center">
+                    <a href="https://github.com/benfulcher/hctsa" title="Check out the code repository" target="_blank"><img width="150px" class="img-responsive" src="/assets/img/octocat.jpg" alt="Check out the code repository" /></a>
+                </p>
+                <h3>The results</h3>
+                <p>
+                    <em>hctsa</em> has been used for a wide range of real-world problems involving time-series data, spanning precision
+                    medicine to financial analytics. Successful applications include:
+                </p>
+                <p>
+                    <ul>
+                        <li>Classifying seizures from EEG brain recordings</li>
+                        <li>Diagnosing Parkinson's disease from speech for precision medicine</li>
+                        <li>Monitoring sleep-stage progression</li>
+                        <li>Predicting schizophrenia from brain-imaging data</li>
+                        <li>Forecasting catastrohpes in financial and ecological systems</li>
+                    </ul>
+                </p>
+                <p>For further examples of real-world application and commercial use of <em>hctsa</em>, see <a href=http://www.engineanalytics.org>Engine Analytics</a>.</p>
+                <h3>How CompEngine works</h3>
+                <p>
+                    Our research has suggested that real-world time series can be represented compactly using a small set of numbers,
+                    called features, that capture their important properties. When you upload time-series data to CompEngine, we
+                    compute these features from your data, and use them to find other time series, already in our library, that have
+                    similar feature values. We hope to improve this feature set over time to give the best possible matches.
+                </p>
+                <p class="center">
+                    <div style="max-width: 450px; margin: 0 auto;" data-region='infographic'></div>
+                </p>
+                    
+                <h3 id="feature-set">The CompEngine feature set</h3>
+                <p>
+                    The current set of 16 features was taken from our time-series analysis software package,
+                    <a href="https://github.com/benfulcher/hctsa" target="_blank">hctsa <i class="fa fa-github"></i></a>,
+                    as a set that performs well on diverse time-series classification tasks and includes a diverse range of behaviors.
+                    The feature set used to retrieve neighbors in CompEngine can be grouped crudely as measuring: <em><b>autocorrelation</b></em>
+                    (CO_Embed2_Basic_tau_incircle_1, CO_Embed2_Basic_tau_incircle_2, AC_9, CO_FirstMin_ac, CO_trev_1_num, SB_MotifTwo_mean_hhh,
+                    PH_Walker_prop_01_sw_propcross) and <em><b>predictability</b></em> (FC_LocalSimple_mean1_taures, FC_LocalSimple_lfit_taures,
+                    EN_SampEn_5_03_sampen1), <em><b>stationarity</b></em> (SY_StdNthDer_1, SY_SpreadRandomLocal_50_100_meantaul,
+                    SY_SpreadRandomLocal_ac2_100_meantaul), <em><b>distribution</b></em> (DN_HistogramMode_10, DN_OutlierInclude_abs_001_mdrmd),
+                    and <em><b>scaling</b></em> (SC_FluctAnal_2_rsrangefit_50_1_logi_prop_r1).
+                    If you’re interested in the specific algorithmic implementations of these features, the names of features
+                    given in parentheses in the list above can be matched to features in our software package,
+                    <a href="https://github.com/benfulcher/hctsa" target="_blank">hctsa <i class="fa fa-github"></i></a>.
+                </p>
+                <h3>Who are we?</h3>
+                <p>
+                    This website was developed by <a href="https://www.imperial.ac.uk/people/nick.jones" target="_blank">Nick Jones</a> (Imperial College London, Mathematics)
+                    and <a href="http://www.benfulcher.com" target="_blank">Ben Fulcher</a> (University of Sydney, Physics) through funding from the EPSRC.
+                    The set of features used to represent time series was developed through work by <a href="http://www.imperial.ac.uk/people/s.sethi16" target="_blank">Sarab Sethi</a>
+                    and coded in C by <a href="https://www.researchgate.net/profile/Carl_Lubba" target="_blank">Carl Lubba</a>.
+                    Web design and all back-end development was done by <a href="http://vokke.com.au/" target="_blank">Vokke</a>,
+                    a Melbourne-based design and development agency. The home-page schematic for CompEngine was designed
+                    by <a href="http://www.rachaelfulcher.com/" target="_blank">Rachael Fulcher</a>.
+                </p>
+                <h3>Scientific journal articles <i class="fa fa-book"></i></h3>
+                <p>
+                    You can follow our research in this area, including a range of specific applications, through the scientific journal articles listed below:
+                </p>
+                <ul>
+                    <li><em><b>Implementation paper introducing the hctsa package, with applications to high throughput phenotyping of C. Elegans and Drosophila movement time series:</b></em> B.D. Fulcher & N.S. Jones. <em>hctsa:</em> A Computational Framework for Automated Time-Series Phenotyping Using Massive Feature Extraction. <em>Cell Systems</em> <b>5</b>, 527 (2017). <a href="http://www.cell.com/cell-systems/fulltext/S2405-4712(17)30438-6" target="_blank">Link</a>.</li>
+                    <li><em><b>Introduction to feature-based time-series analysis:</b></em> B.D. Fulcher. Feature-based time-series analysis. <em>arXiv</em> 1709.08055 (2017) <a href="https://arxiv.org/abs/1709.08055" target="_blank">Link</a>.</li>
+                    <li><em><b>Application to fMRI data:</b></em> S.S. Sethi, V. Zerbi, N. Wenderoth, A. Fornito, B.D. Fulcher. Structural connectome topology relates to regional BOLD signal dynamics in the mouse brain. <em>Chaos</em> <b>27</b>, 047405 (2017). <a href="http://aip.scitation.org/doi/10.1063/1.4979281" target="_blank">Link</a>, <a href="http://biorxiv.org/lookup/doi/10.1101/085514" target="_blank">preprint</a>.</li>
+                    <li><em><b>Application to time-series data mining:</b></em> B.D. Fulcher & N.S. Jones. Highly comparative feature-based time-series classification. <em>IEEE Trans. Knowl. Data Eng.</em> <b>26</b>, 3026 (2014). <a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6786425" target="_blank">Link</a>.</li>
+                    <li><em><b>Application to fetal heart rate time series:</b></em> B.D. Fulcher, A.E. Georgieva, C.W.G. Redman, N.S. Jones. Highly comparative fetal heart rate analysis. <em>34th Ann. Int. Conf. IEEE EMBC</em> 3135 (2012). <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6346629" target="_blank">Link</a>.</li>
+                    <li><em><b>Original paper, showing that the behavior of thousands of time-series methods on thousands of different time series can provide structure to the interdisciplinary time-series analysis literature:</b></em> B.D. Fulcher, M.A. Little, N.S. Jones. Highly comparative time-series analysis: the empirical structure of time series and their methods. <em>J. Roy. Soc. Interface</em> <b>10</b>, 20130048 (2013). <a href="http://rsif.royalsocietypublishing.org/content/10/83/20130048.full" target="_blank">Link</a>.</li>
+                </ul>
+                <h3>Acknowledgements</h3>
+                <p>
+                    We would like to thank the EPSRC for grants EP/K503733/1 and EP/N014529/1.
+                </p>
+            </div>
+        </section>
+
+        <section id="loader"></section>
+
+    </div>
+
+    <section id="footer-container"></section>
+
+</section>

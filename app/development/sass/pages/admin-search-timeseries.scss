@@ -1,0 +1,53 @@
+#search-form {
+  $scrollbar-track: #efefef;
+
+  #category {
+    height: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    /**
+     * Fix for perfect scrollbar, it would sit outside of the element if it didn't have a position set
+     * Which kind of defeats the purpose of its main motto (below)
+     * "There should be no css change on any original element."
+     */
+    position: relative;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  #description {
+    resize: none;
+  }
+
+  #suggest-category {
+
+    &>small {
+      cursor: pointer;
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+
+  .tag {
+    margin-right: 5px;
+  }
+
+  .error-label-small {
+    display: none;
+    font-size: 14px;
+
+    &.align-left-privacy {
+      margin-left: 25px;
+    }
+  }
+
+  .sampling-rate {
+    min-height: 50px;
+  }
+}

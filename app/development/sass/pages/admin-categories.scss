@@ -1,0 +1,55 @@
+.category-item {
+  background: #fff;
+  &__content {
+    display: flex;
+    border-bottom: 1px solid #eceeef;
+  }
+  &__name {
+    flex: 1;
+    padding: 10px 3px 10px 10px;
+
+    &.editing {
+      padding: 7px 3px 7px 8px;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+  &__id {
+    padding: 10px 5px;
+  }
+  &__actions {
+    padding: 9px 7px;
+
+    .tag {
+      padding: 5px 8px;
+      margin-right: 5px;
+      .btn {
+        padding: 1px 5px;
+      }
+    }
+  }
+  &__timeseries-count {
+    padding: 10px 0;
+  }
+  &.placeholder {
+    visibility: visible;
+    background: #eceeef;
+    border: 2px dashed #ccc;
+  }
+}
+
+#categories-list {
+  > ol {
+    padding: 0;
+  }
+
+  .ui-sortable-handle {
+    cursor: move;
+  }
+}
+
+ol {
+  list-style: none;
+}

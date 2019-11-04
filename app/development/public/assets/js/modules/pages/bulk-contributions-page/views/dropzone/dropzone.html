@@ -1,0 +1,60 @@
+<p>
+    Drag in files below to bulk upload them.
+
+    You'll be able to set the meta data after the files have been uploaded.
+
+    Please note that the total file limit allowed is <%- maxTotalBulkUploadSize %>
+</p>
+
+<!-- Dropzone -->
+<form action="/" class="dropzone" id="imperialistZone">
+    <div class="dropzone-el">
+        <div class="card">
+            <div class="card-block">
+                <i class="fa fa-cloud fa-2x upload-icon"></i>
+
+                <h4 class="card-title dz-message"></h4>
+
+
+                <p class="card-text">
+                    (<%- supportedFileExtensions %> up to <%- fileSizeLimit %>mb each)
+                </p>
+
+                <div id="previewsContainer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="m30">
+        <div class="row" id="previews">
+            <div id="sample-card" style="display:none">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <p class="margin-0 text-xs-left">
+                                <span data-dz-name></span>
+                                <span style="margin-left: 10px;">(<span data-dz-size></span>)</span>
+
+                                <span class="pull-xs-right btn btn-default btn-xs" data-dz-remove>
+                                    X
+                                </span>
+                                <span class="pull-xs-right btn btn-default btn-xs" data-dz-requeue>
+                                    Try again
+                                </span>
+                                <span class="pull-right" data-dz-errormessage></span>
+                            </p>
+                            <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p id="success-message" class="alert alert-success" style="display:none;"></p>
+
+    <button type="button" class="btn btn-primary" id="submit-files" disabled="disabled">Upload</button>
+    <button type="button" class="btn btn-primary" id="add-meta-data" style="display:none;">Next</button>
+    <button type="button" class="btn btn-default" id="start-again" style="display:none;">Start Again</button>
+
+    <p id="total-bulk-upload-size"></p>
+</form>

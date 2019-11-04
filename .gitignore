@@ -1,0 +1,9 @@
+node_modules
+.idea/
+development/public/assets/js/libs/managed
+.grunt/
+.sass-cache/
+.build-cache/
+npm-debug.log
+.DS_Store
+/app/distribute/settings

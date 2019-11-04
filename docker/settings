@@ -1,0 +1,8 @@
+var GLOBALS = { 
+    APIEndpoint: 'xAPIEndpoint',
+    Version: 'xVersion', 
+    MixpanelToken: 'xMixpanelToken',
+    recaptcha: 'xrecaptcha', 
+    FB_APP_ID: 'xFB_APP_ID', 
+    GA_TRACKING_ID: 'xGA_TRACKING_ID' 
+};

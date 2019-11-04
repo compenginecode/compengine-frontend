@@ -1,0 +1,9 @@
+<ol style="list-style: decimal">
+    <% files.forEach(function (file) { %>
+        <li>
+            <a href="<%- file.downloadUrl %>" target="_blank">
+                <%- file.name %>
+            </a>
+        </li>
+    <% }) %>
+</ol>

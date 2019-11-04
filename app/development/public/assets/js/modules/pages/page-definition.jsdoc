@@ -1,0 +1,7 @@
+/**
+ *  Pages are each individual page, it contains the HTML, Basic logic & route controller
+ *
+ * @type {*}
+ * @extends Marionette.View
+ * @namespace Page
+ */

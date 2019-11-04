@@ -1,0 +1,112 @@
+/** Based on _modals.scss **/
+// .prompt-open      - body class for killing the scroll
+// .prompt           - container to scroll within
+// .prompt-dialog    - positioning shell for the actual modal
+// .prompt-content   - actual modal w/ bg and corners and shit
+
+
+// Container that the modal scrolls within
+.prompt {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .prompt-dialog {
+    transition: transform .3s ease-out;
+    transform: translate(0, -25%);
+  }
+  &.in .prompt-dialog { transform: translate(0, 0); }
+}
+
+// Shell div to position the modal with bottom padding
+.prompt-dialog {
+  position: fixed;
+  width: auto;
+  z-index: $zindex-prompt;
+  margin: $prompt-dialog-margin;
+  float: $prompt-position;
+}
+
+// Actual modal
+.prompt-content {
+  position: relative;
+  background-color: $modal-content-bg;
+  background-clip: padding-box;
+  border: $modal-content-border-width solid $modal-content-border-color;
+  @include border-radius($border-radius-lg);
+  @include box-shadow($modal-content-xs-box-shadow);
+  // Remove focus outline from opened modal
+  outline: 0;
+  z-index: 3;
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.prompt-header {
+  padding: $modal-title-padding;
+  border: 0;
+  position: relative;
+  height: 0;
+  @include clearfix;
+}
+// Close icon
+.prompt-header .close {
+  margin-top: -2px;
+}
+
+// Title text within header
+.prompt-title {
+  margin: 0;
+  line-height: $modal-title-line-height;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .prompt-header and .prompt-footer)
+.prompt-body {
+  position: relative;
+  padding: $modal-inner-padding;
+}
+
+// Footer (for actions)
+.prompt-footer {
+  padding: $modal-inner-padding;
+  text-align: right; // right align buttons
+  border-top: $modal-footer-border-width solid $modal-footer-border-color;
+  @include clearfix(); // clear it in case folks use .pull-* classes on buttons
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.prompt-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+// Scale up the modal
+@include media-breakpoint-up(sm) {
+  // Automatically set modal's width for larger viewports
+  .prompt-dialog {
+    max-width: $prompt-md;
+    margin: $prompt-dialog-margin;
+  }
+
+  .prompt-content {
+    @include box-shadow($modal-content-sm-up-box-shadow);
+  }
+
+  .prompt-sm { max-width: $modal-sm; }
+}
+
+@include media-breakpoint-up(lg) {
+  .prompt-lg { max-width: $modal-lg; }
+}

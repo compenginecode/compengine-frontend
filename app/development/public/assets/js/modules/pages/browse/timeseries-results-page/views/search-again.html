@@ -1,0 +1,33 @@
+<div class="search">
+    <form>
+    <div class="row">
+
+            <div class="col-md-12">
+                <h3>Search for a time series</h3>
+                <p>You can enter search terms to find matching time series.<br /> E.g. a specific source like 'Imperial College' or a category like 'Light curves'.</p>
+            </div>
+
+            <div class="col-md-5">
+                <input type="text" class="form-control" value="<%- searchingBy.match %>" placeholder="E.g. type &quot;rainfall&quot; to find all rainfall time series" />
+            </div>
+
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-black btn-pill" style="margin-top: 0;">Search</button>
+            </div>
+
+    </div>
+
+    <div class="row" data-role="download-region">
+        <div class="col-md-5">
+            <select name="export-type" id="export-type" class="form-control" value="" style="margin-top: 7px;">
+                <option value="csv">CSV (zipped)</option>
+                <option value="json">JSON</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <a data-role="download-results" class="btn btn-black-outline" style="padding: 10px;">Download all on page</a>
+        </div>
+    </div>
+
+    </form>
+</div>

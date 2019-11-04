@@ -1,0 +1,132 @@
+#timeseries-page-container {
+  height: 100%;
+}
+
+.timeseries-page {
+  min-height: calc(100% - 52px);
+  margin-top: 100px;
+  z-index: 2;
+  position: relative;
+
+  /** Hide file previews **/
+  #previewsContainer {
+    display: none;
+  }
+
+  #loader {
+    position: relative;
+  }
+
+  @media(min-height: 900px) {
+    #loader {
+      top: 200px;
+    }
+  }
+
+  @media(max-height: 899px) {
+    #loader {
+      top: 100px;
+    }
+  }
+
+  .spinner {
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    position: relative;
+    margin: 25px 0;
+    width: 50px;
+    height: 50px;
+
+    & .path {
+      stroke: #333333;
+      stroke-linecap: round;
+      animation: dash 1.5s ease-in-out infinite;
+    }
+
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+
+  .loading-fixed-height {
+    min-height: 200px;
+  }
+
+  .loading-social {
+
+    a {
+      color: $default-text-color;
+      text-decoration: none;
+      margin: 0 10px;
+
+      i {
+        padding: 0 10px;
+      }
+
+      &:hover {
+        color: lighten($default-text-color, 10%);
+      }
+
+    }
+  }
+
+  .error-container {
+    width: 60%;
+    padding: 50px 0;
+    margin: 0 auto;
+  }
+
+  .data-uploading {
+    &>h3, &>p {
+      padding: 0 0 20px;
+    }
+  }
+
+  #data-visualization {
+    width: auto;
+
+    &>.vis-network, &>.vis-network>canvas {
+      @include media-breakpoint-up(md) {
+        min-height: 500px;
+        max-height: calc(100% - 52px);
+        width: 100%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        min-height: 700px;
+        max-height: calc(100% - 52px);
+        width: 100%;
+      }
+    }
+  }
+
+  #upload-data-button {
+    margin-top: 30px;
+  }
+}
+
+#hide-show-information-panel{
+  position: absolute;
+  right: 110px;
+  top: 10px;
+  z-index: 2;
+  padding: 12px 18px;
+}

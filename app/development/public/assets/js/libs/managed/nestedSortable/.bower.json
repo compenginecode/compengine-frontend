@@ -1,0 +1,16 @@
+{
+  "name": "nestedSortable",
+  "version": "2.0.0",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/ilikenwf/nestedSortable",
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.0",
+    "commit": "8fdc6a1892e3249e93a035445e59639dc6f040b8"
+  },
+  "_source": "https://github.com/ilikenwf/nestedSortable.git",
+  "_target": "^2.0.0",
+  "_originalSource": "jquery-nested-sortable"
+}

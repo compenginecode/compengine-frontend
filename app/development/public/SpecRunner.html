@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Jasmine Spec Runner</title>
+    <link rel="shortcut icon" type="image/png" href="assets/js/libs/managed/jasmine-core/images/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="assets/js/libs/managed/jasmine-core/lib/jasmine-core/jasmine.css">
+
+    <script type="text/javascript" src="assets/js/libs/managed/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script type="text/javascript" src="assets/js/libs/managed/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script type="text/javascript" src="assets/js/libs/managed/jasmine-core/lib/jasmine-core/boot.js"></script>
+
+    <script type="application/javascript" src="http://adrian.vokke.com:8019/boot"></script>
+    <script data-main="assets/js/main" src="assets/js/libs/managed/requirejs/require.js"></script>
+
+</head>
+    <body>
+
+        <!-- Backbone Container -->
+        <div class="app" style="display: none;"></div>
+
+        <script>
+            // Add your Jasmine spec files here
+            require([
+                    "libs/managed/backbone/backbone",
+                    "libs/managed/jquery/dist/jquery",
+                    "libs/managed/underscore/underscore",
+                    "libs/managed/marionette/lib/backbone.marionette",
+                    "libs/managed/jasmine-core/lib/jasmine-core/jasmine-html"
+                    ],
+                    function (spec, jasmineHtml) {
+                        specs = [];
+                        specs.push("test/specs/landing-page.spec");
+                        $(function () {
+                            require(specs, function () {
+                                jasmine.getEnv().addReporter(new jasmineRequire.HtmlReporter());
+                                jasmine.getEnv().execute();
+                            });
+                        });
+                    }
+            );
+        </script>
+
+        <div id="container"></div>
+
+    </body>
+</html>

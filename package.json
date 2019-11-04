@@ -1,0 +1,64 @@
+{
+  "name": "compengine-frontend",
+  "description": "Imperial College CompEngine Frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd server && node ./server --bundle dev-adrian"
+  },
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "bower": "^1.7.7",
+    "command-line-args": "^0.5.5",
+    "express": "3.x",
+    "grunt-closure-compiler": "0.0.21",
+    "grunt-requirejs": "^0.4.2",
+    "helmet": "^0.7.1",
+    "jasmine-core": "^2.4.1",
+    "madge": "^0.5.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "browser-sync": "^2.11.1",
+    "cssnano": "^3.7.1",
+    "express": "3.x",
+    "grunt": "~0.4.0",
+    "grunt-cache-bust": "^0.4.13",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-jasmine": "^1.0.3",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "0.9.2",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-karma": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-preprocess": "^4.1.0",
+    "grunt-shell": "^1.1.2",
+    "grunt-template-jasmine-requirejs": "^0.2.3",
+    "jasmine-core": "^2.2.0",
+    "jscs": "^3.0.6",
+    "karma": "^1.1.2",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^0.3.5",
+    "karma-jsdom-launcher": "^4.0.0",
+    "karma-requirejs": "^1.0.0",
+    "karma-teamcity-reporter": "^0.1.2",
+    "mocha": "^3.0.2",
+    "requirejs": "^2.3.5",
+    "sinon": "^1.17.5",
+    "uglify-js": "~2.2.5"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/BoilerplateMVC/Marionette-Require-Boilerplate/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "./server/server",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:BoilerplateMVC/Marionette-Require-Boilerplate.git"
+  }
+}

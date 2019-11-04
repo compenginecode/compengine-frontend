@@ -1,0 +1,155 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- About page content -->
+<section id="browse-page-container">
+
+    <div class="container text-xs-center browse-page">
+
+        <section id="default">
+            <div id="browse-default">
+                <h3>
+                    Explore the time-series data library
+                </h3>
+
+                <p class="description text-xs-left">
+                    The CompEngine time-series data library contains <%- timeSeriesCount %> <em>(and counting!)</em> pieces of annotated time-series
+                    data from a wide range of real-world and synthetic systems. The original time-series data library was developed
+                    by <a href="http://www.benfulcher.com" target="_blank">Ben Fulcher</a>, through simulations and scouring the web for diverse time-series data,
+                    and has since been expanded with user contributions.
+                </p>
+                <p class="description text-xs-left">
+                    You can browse our library by: source (names of specific datasets), category (broad classes of time-varying data,
+                    such as “air temperature” or “heart rate”), or tag (additional assigned metadata):
+                </p>
+                <div class="row" style="margin-bottom: 70px;">
+                    <div class="col-md-4">
+                        <a href="/#!browse/source">
+                            <div class="row">
+                                <div class="col-md-12 padding-10">
+                                    <i class="fa fa-user fa-5x"></i>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <p class="link-decorate">Browse by source</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="/#!browse/category">
+                            <div class="row">
+                                <div class="col-md-12 padding-10">
+                                    <i class="fa fa-folder fa-5x"></i>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <p class="link-decorate">Browse by category</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="/#!browse/tag">
+                            <div class="row">
+                                <div class="col-md-12 padding-10">
+                                    <i class="fa fa-tags fa-5x"></i>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <p class="link-decorate">Browse by tag</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <h3>Search the library</h3>
+                <p class="description text-xs-left">
+                    You can also search our library, which will find matches according to any metadata field:
+                </p>
+                <form role="search" style="margin-bottom:70px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" placeholder="E.g. type &quot;rainfall&quot; to find all rainfall time series">
+                        </div>
+        
+                        <div class="col-md-12">
+                            <button class="btn btn-black">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <h3>Download the time-series data</h3>
+                <p class="description text-xs-left">
+                    One of the aims of CompEngine is to assemble a living library of time-series data that will allow
+                    us to better understand the structure of the time series that we measure from the world.
+                    All data stored within the CompEngine application is publically available under the
+                    <a href="https://creativecommons.org/share-your-work/public-domain/cc0" style="text-decoration: underline;" target="_blank">CC0 license</a>.
+                </p>
+                <p class="description text-xs-left">
+                    If you would like to analyze the current time-series data library (updated daily), please select a
+                    desired format and enter your email below. We will send you a download link to this address.
+                </p>
+                <section id="download-form">
+                    <div class="row center">
+                        <div class="form-group col-md-8">
+                            <label for="email-address">Email (where we'll send the download link)</label>
+                            <input type="text" class="form-control" id="email-address" placeholder="Email" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="alert alert-danger" data-error="email-address-error" style="display: none;"></div>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="export-type">File format</label>
+                            <select name="export-type" id="export-type" class="form-control">
+                                <%
+                                    var filesAvailable = true;
+                                    var sizesByKey = Object.keys(exportedDataSizes);
+                                    var count = 0;
+                                    // Sort the array alphabetically
+                                    sizesByKey.sort();
+                                    sizesByKey.forEach(function(key) {
+                                        var value = exportedDataSizes[key];
+                                        var uppercase = key.toLocaleUpperCase();
+                                        var byteSized = byteToSize(value);
+
+                                        if (null !== value) { %>
+                                            <option value="<%- key %>"><%- uppercase %> (<%- byteSized %>)</option>
+                                        <%
+                                        count++;
+                                        }
+                                    });
+
+                                    if (count === 0) { filesAvailable = false; %>
+                                        <option disabled selected>Sorry, but there are no files avaliable right now.</option>
+                                    <%
+                                    }
+
+                                %>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <button class="btn btn-primary" id="submit-btn" <% if(!filesAvailable) { %>disabled<% } %>>Email me the download link</button>
+                        </div>
+                        <div class="alert alert-success col-md-8" id="success-message" style="display: none">
+                            Thanks for your request! A download link has been emailed to you.
+                        </div>
+                        <div class="alert alert-danger col-md-8" id="error-message" style="display: none"></div>
+                    </div>
+                </section>
+            </div>
+
+        </section>
+
+        <section id="loader"></section>
+
+    </div>
+
+    <section id="footer-container"></section>
+
+</section>

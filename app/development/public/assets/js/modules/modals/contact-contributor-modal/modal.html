@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            Please fill in the details below and we'll forward the contributor an email at the end of the week
+            regarding your question about the time series
+            <b><%- timeseriesName %></b>
+        </p>
+    </div>
+</div>
+
+<form class="row">
+    <div class="col-md-12 form-group">
+        <label for="name">Your name</label>
+        <input type="text" class="form-control" id="name" name="name" />
+    </div>
+    <div class="col-md-12">
+        <div class="alert alert-danger" data-error="name-error" style="display: none;"></div>
+    </div>
+
+    <div class="col-md-12 form-group">
+        <label for="email-address">Your email</label>
+        <input type="text" class="form-control" id="email-address" name="emailAddress" />
+    </div>
+    <div class="col-md-12">
+        <div class="alert alert-danger" data-error="email-address-error" style="display: none;"></div>
+    </div>
+
+    <div class="col-md-12 form-group">
+        <label for="message">Your message</label>
+        <textarea name="message" id="message" class="form-control"></textarea>
+    </div>
+    <div class="col-md-12">
+        <div class="alert alert-danger" data-error="message-error" style="display: none;"></div>
+    </div>
+
+    <div class="col-md-12 form-group">
+        <button type="button" data-action="send" class="btn btn-black pull-xs-right">Send</button>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-danger" role="alert" fatal-error style="display: none;"></div>
+    </div>
+</div>

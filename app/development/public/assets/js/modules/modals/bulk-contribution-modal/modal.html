@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            To make a bulk upload of data, you are required to seek permission from the administrators. Complete the request form below.
+        </p>
+    </div>
+
+    <form id="request">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="name">
+                    Name *
+                </label>
+                <input class="form-control" type="text" id="name" name="name" />
+                <div class="text-danger error-label-small" data-error="name" style="display: none"></div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="email">
+                    Email *
+                </label>
+                <input class="form-control" type="email" id="email" name="emailAddress" />
+                <div class="text-danger error-label-small" data-error="emailAddress" style="display: none"></div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="organisation">
+                    Organisation *
+                </label>
+                <input class="form-control" type="text" id="organisation" name="organisation" />
+                <div class="text-danger error-label-small" data-error="organisation" style="display: none"></div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="description">
+                    Description *
+                </label>
+                <textarea class="form-control" id="description" name="description"></textarea>
+                <div class="text-danger error-label-small" data-error="description" style="display: none"></div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <p>
+                * required field
+            </p>
+
+            <p>
+                If approved, you wil be emailed a link to make bulk contributions.
+            </p>
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <button class="btn btn-black w-100" type="submit" id="submit">Submit request</button>
+                <div class="text-success error-label-small" data-success="form" style="text-align:center; display:hidden;"></div>
+            </div>
+            <p>
+                Dont forget to check your junk email if you have not received a notification.
+            </p>
+        </div>
+    </form>
+
+</div>

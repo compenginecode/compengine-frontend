@@ -1,0 +1,14 @@
+<div class="offset-xs-<%- depth %> col-xs-<%- (12 - depth) %> col-md-6">
+    <a href="/#!browse/category/<%- slug %>" class="card search-result">
+        <div  class="card-block text-xs-left">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="margin-0"><%- name %> (<%- total %>)</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<% if(children.length > 0) { %>
+<section></section>
+<% } %>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="/settings"></script>
+        <script>
+            var googleScript = document.createElement("script");
+                googleScript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=" + GLOBALS.GA_TRACKING_ID);
+                googleScript.setAttribute("async", "");
+                document.head.appendChild(googleScript);
+        </script>
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', GLOBALS.GA_TRACKING_ID);
+        </script>
+        <meta charset="utf-8">
+        <title>CompEngine</title>
+        <meta name="description" content="CompEngine project">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+        <link rel="shortcut icon" href="/favico.ico" type="image/x-icon" />
+
+        <meta name="fragment" content="!">
+
+        <!-- OPEN GRAPH DEFAULTS -->
+        <meta class="social-meta-tag" property="og:title" content="CompEngine">
+        <meta class="social-meta-tag" property="og:description" content="A self-organizing database of time-series data">
+        <meta class="social-meta-tag" property="og:image" content="/assets/test-background.jpg">
+        <meta class="social-meta-tag" property="og:url" content="/">
+
+        <!-- TWITTER DEFAULTS -->
+        <meta class="social-meta-tag" name="twitter:card" content="summary">
+
+        <noscript>
+            <link href="//fonts.googleapis.com/css?family=Open+Sans:100,200,300,400|Raleway:100,200,300,400|Roboto:400,700,900" rel="stylesheet">
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+            <link rel="stylesheet" href="/assets/css/app.min.css">
+        </noscript>
+
+    </head>
+
+    <body>
+        <div id="local-body">
+            <div class="app"></div>
+            <div class="app-loading">
+                <div class="window-loader"></div>
+            </div>
+        </div>
+
+        <script id="boot-script" defer>
+            /**
+             * We'll add in the fonts dynamically so we don't block rendering
+             */
+            window.addEventListener("DOMContentLoaded", function doneLoading() {
+                var document = window.document;
+                window.removeEventListener("DOMContentLoaded", doneLoading);
+
+                var thisScript = document.getElementById('boot-script');
+                var bootScript = document.createElement("script");
+                bootScript.type = "text/javascript";
+                bootScript.src = GLOBALS.APIEndpoint + "/boot";
+                thisScript.parentNode.insertBefore(bootScript, thisScript.nextSibling);
+
+
+                var openSans = document.createElement("link");
+                openSans.setAttribute("rel", "stylesheet");
+                openSans.setAttribute("href", "//fonts.googleapis.com/css?family=Open+Sans:100,200,300,400|Raleway:100,200,300,400|Roboto:400,700,900");
+
+                var fontAwesome = document.createElement("link");
+                fontAwesome.setAttribute("rel", "stylesheet");
+                fontAwesome.setAttribute("href", "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css");
+
+                var mainCss = document.createElement("link");
+                mainCss.setAttribute("rel", "stylesheet");
+                mainCss.setAttribute("href", "assets/css/app.min.css");
+
+                document.head.appendChild(openSans);
+                document.head.appendChild(fontAwesome);
+                document.head.appendChild(mainCss);
+            });
+        </script>
+
+        <script data-main="/assets/js/main" src="assets/js/libs/managed/requirejs/require.js" defer></script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+.custom-checkbox {
+  .custom-control-indicator {
+    margin-top: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .custom-control-description {
+    font-size: $font-size-sm;
+    word-wrap: break-word;
+    max-width: calc(100% - 13px);
+    display: inline-table;
+  }
+}
+
+.custom-control-input:checked {
+  & ~ .custom-control-indicator {
+    background-color: $brand-primary;
+  }
+}
+
+.input-group-addon {
+  line-height: 24px;
+}
+
+/** Add hover / focus states to the custom file input **/
+.file-custom {
+  &:hover {
+    &:before {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &:focus, &:active  {
+    &:before {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.form-control {
+  font-size: $font-size-sm;
+  border-radius: 0;
+
+  &:focus, &:active {
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border-color: $brand-primary;
+  }
+}
+
+.form-control-label {
+  font-size: $font-size-sm;
+}
+
+.form-control-label, .custom-control-description {
+
+  .fa-question-circle {
+    color: #009fc6;
+    font-size: 0.9rem;
+  }
+
+}
+
+.form-group-center {
+  margin: 0.3rem 0;
+}
+
+.form-group{
+  label{
+    @extend .no-select;
+  }
+}

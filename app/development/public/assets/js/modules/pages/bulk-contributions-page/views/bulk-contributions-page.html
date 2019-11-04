@@ -1,0 +1,210 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="landing-page-container">
+
+    <div class="container text-xs-center landing-page">
+
+        <section id="default">
+            <div class="alert alert-warning alert-dismissible" id="mobile-warning" style="display:none;">
+                <span class="close" aria-hidden="true" data-dismiss="alert">&times;</span>
+                This site may be used from mobile but is only officially supported in desktop browsers.
+            </div>
+
+            <h3>
+                Bulk upload
+            </h3>
+
+            <div id="not-a-robot">
+                <p>Please help us fight spam by first completing the reCAPTCHA.</p>
+                <div id="recaptcha-container"></div>
+            </div>
+
+            <section id="dropzone-container" class="center margin-t-10" style="display:none;"></section>
+            <section id="meta" class="text-xs-left" style="display: none;">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <p class="text-xs-center">
+                            Great, your files have been uploaded into the CompEngine database.
+                            Please fill in the following details and we'll add this information alongside each time series you contributed.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <p>
+                            <i class="fa fa-cloud m-r-1"></i>
+                            <span id="total-files-uploaded">0</span> files successfully uploaded. Time to add some meta data.
+                        </p>
+                        <section id="first-row">
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label class="form-control-label w-100" for="category">
+                                            Category*
+                                        </label>
+                                        <div id="category" aria-label="Category (Required)" style="background:white;"></div>
+                                        <span class="text-danger error-label-small">This field is required</span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label class="form-control-label w-100" for="sampling-rate">
+                                            Sampling Rate*
+                                        </label>
+                                        <input type="text" class="form-control" id="sampling-rate" placeholder="Sampling rate (e.g. 44.01)" aria-label="Sampling rate">
+                                        <span class="text-danger error-label-small">This field is required</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-control-label w-100" for="sampling-unit">
+                                            Sampling Unit*
+                                        </label>
+                                        <input type="text" class="form-control" id="sampling-unit" placeholder="Unit (e.g. KHz)" aria-label="Sampling unit">
+                                        <span class="text-danger error-label-small">This field is required</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="tags">Tags*</label>
+                                        <input type="text" class="form-control" id="tags" placeholder="Select tags" aria-label="Tags">
+                                        <span class="text-danger error-label-small">This field is required</span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12" id="tag-container"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="second-row">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <p>
+                                        <i class="fa fa-archive m-r-1"></i>
+                                        If you like, you can provide a root word.
+                                        This is appended to the name of each file so others can identify it's part of a collection of similar files.
+                                    </p>
+
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="time-series-name">
+                                            Root word
+                                        </label>
+                                        <input type="text" class="form-control form-control-danger" id="time-series-name" aria-label="Root word">
+                                        <span class="text-danger error-label-small">This field is required</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="third-row">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <!-- Real checkbox (Hidden for style) -->
+                                            <input type="checkbox" class="custom-control-input" aria-checked="false" id="privacy-policy-agreed-checkbox">
+
+                                            <!-- Custom checkbox -->
+                                            <span class="custom-control-indicator"></span>
+
+                                            <!-- Label -->
+                                            <span class="custom-control-description" aria-label="I have read the Privacy Policy and I understand that my data will be in the public domain.">
+                                                I have read the <a href="/#!privacy-policy" target="_blank">Privacy Policy</a> and
+                                                I understand that my data will be in the public domain.
+                                            </span>
+
+                                            <span class="text-danger error-label-small align-left-privacy">This field is required</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" aria-checked="false" id="contact-permission-checkbox">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description" aria-label="I allow other users to contact me. I understand that my email will never be displayed on the website.">
+                                                I allow other users to contact me.
+                                                I understand that my email won't be shown on the website.
+                                            </span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" aria-checked="false" id="weekly-email-checkbox">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description" aria-label="Notify me when data is uploaded that is similar to mine (weekly aggregated email).">
+                                                Notify me when data is uploaded that is similar to mine (weekly aggregated email)
+                                            </span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                        </section>
+
+                        <section id="submission-row">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="pull-right">
+                                        <button type="button" data-action="contribute" class="btn btn-lg btn-block btn-primary">I'm done!</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <div class="row">
+                <div class="col-sm-8 offset-sm-2">
+                    <div class="alert alert-success" id="success-message" role="alert" style="display: none;">
+                        <p><b>Thank you! We have received your bulk file submission.</b></p>
+                        <p>
+                            We will now review the uploaded files. When your files are approved you will receive an email alert.
+                        </p>
+                        <p>
+                            You will receive an alert each day with any new approvals,
+                            with respective links to each timeseries visualisation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="alert alert-danger" role="alert" fatal-error style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="loader"></section>
+
+    </div>
+
+    <section id="footer-container"></section>
+
+</section>

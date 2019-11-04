@@ -1,0 +1,15 @@
+<th scope="row"><%= getFormattedUploadDate() %></th>
+<td style="<% if ('pending'===status) {%>color:red; <% } %>"</td><%- status.charAt(0).toUpperCase() + status.substr(1) %></td>
+<td><%- contributor %></td>
+<td><%- source ? source : '-' %></td>
+<td><%- category %></td>
+<td><%- tags.join(', ') %></td>
+<td><%- samplingRate %> <%- samplingUnit %></td>
+<td><%- fileCount %></td>
+<td style="width:340px">
+    <button data-view-files-btn class="btn btn-xs btn-default">View files</button>
+    <% if ('pending' == status){ %>
+        <button data-approve-btn class="btn btn-xs btn-default">Approve</button> <button data-deny-btn class="btn btn-xs btn-default">Deny</button>
+        <span class="error-text"></span>
+    <% } %>
+</td>

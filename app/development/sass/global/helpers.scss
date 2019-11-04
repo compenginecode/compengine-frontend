@@ -1,0 +1,39 @@
+/** Margin **/
+.margin-0 {
+  margin: 0;
+}
+
+.margin-10 {
+  margin: 10px;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.margin-t-10{
+  margin-top: 10px;
+}
+
+.m-center {
+  margin: 0 auto;
+}
+
+/** Width **/
+.w-100 {
+  width: 100%;
+}
+
+@include media-breakpoint-up(xl) {
+  .xl-center {
+    margin: 0 auto;
+  }
+}
+
+.padding-10 {
+  padding: 10px !important;
+}
+
+.inline {
+  display: inline;
+}

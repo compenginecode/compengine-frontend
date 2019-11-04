@@ -1,0 +1,26 @@
+<!-- Dropzone -->
+<form action="/" class="dropzone" id="imperialistZone">
+    <div class="dropzone-el">
+        <div class="card">
+            <div class="card-block">
+                <i class="fa fa-cloud fa-2x upload-icon"></i>
+
+                <h4 class="card-title dz-message"></h4>
+
+
+                <p class="card-text">
+                    (<%- supportedFileExtensions %> up to <%- fileSizeLimit %>mb)
+                </p>
+
+                <p class="text-muted">Maximum time-series length: 10,000 samples</p>
+
+                <div id="previewsContainer"></div>
+            </div>
+        </div>
+        <div class="text-xs-right">
+            <a href="#" id="bulk-contribution">
+                Upload multiple files
+            </a>
+        </div>
+    </div>
+</form>

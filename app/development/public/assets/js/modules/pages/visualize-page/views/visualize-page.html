@@ -1,0 +1,262 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="results-page-container">
+    <div class="alert alert-success alert-fadeIn" role="alert">
+        <strong>Great, we're done!</strong> Analyze your data below!
+    </div>
+    <div class="container text-xl-center text-xs-left results-page has-data">
+
+        <section id="default">
+            <button id="show-help-modal" class="btn btn-default">Help</button>
+            <button id="hide-show-information-panel" class="btn btn-default">Hide/show information panel</button>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 id="name" style="display:none;"></h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 xl-center">
+                    <!-- Network view -->
+                    <section id="data-visualization" class="center"></section>
+
+                    <!-- Graph view -->
+                    <section id="graph" class="center"></section>
+
+                    <!-- List view -->
+                    <section id="list-view" class="center" style="display: none;"></section>
+                </div>
+            </div>
+        </section>
+
+        <section id="loader"></section>
+
+    </div>
+
+    <section id="sidebar"></section>
+
+    <section id="footer-container"></section>
+
+    <section id="analysis-panel">
+        <section id="zoom-buttons">
+            <button class="btn btn-sm btn-default" id="center-graph">
+                <i class="fa fa-arrows-alt"></i>
+            </button>
+            <button class="btn btn-sm btn-default" id="zoom-out-graph">
+                <i class="fa fa-minus"></i>
+            </button>
+            <button class="btn btn-sm btn-default" id="zoom-in-graph">
+                <i class="fa fa-plus"></i>
+            </button>
+        </section>
+        <section id="analysis-loader" style="display: none;"></section>
+        <div class="card" id="analysis-information">
+            <div class="card-tabs">
+                <ul id="card-tabs">
+                    <a href="#node-analysis">
+                        <li>
+                            Neighbour node
+                        </li>
+                    </a>
+
+                    <a href="#target-node-analysis" class="active">
+                        <li>
+                            Target node
+                        </li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="card-block" id="card-panel-container">
+                <div id="node-analysis" style="display:none;">
+                    <div id="no-node-selected">
+                        <label>Hover over a node to see more information about it.</label>
+                    </div>
+                    <div id="node-selected" class="row">
+                        <div class="col-md-4 overflow-hidden">
+                            <div class="rickshaw-container" id="node-analysis-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="160" width="100%" class="rickshaw">
+                                    <path class="path" fill="#ab3675" stroke="none" stroke-width="2" style="transform: scaleY(0.25) scaleX(1) translateX(0) !important;width: 100%;text-align: center;"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 analysis-details">
+                            <div class="row">
+                                <div class="col-md-6 description">
+                                    <label class="label-header">
+                                        Name
+                                    </label>
+
+                                    <span data-id="analysis-name" data-toggle="tooltip" data-placement="top" title="Name"></span>
+                                </div>
+
+                                <div class="col-md-6 description">
+                                    <label class="label-header">
+                                        Category
+                                    </label>
+
+                                    <span data-id="analysis-category" data-toggle="tooltip" data-placement="top" title="Category"></span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 description">
+                                    <label class="label-header">
+                                        Description
+                                    </label>
+
+                                    <span data-id="analysis-description" data-toggle="tooltip" data-placement="top" title="Description"></span>
+                                </div>
+
+                                <div class="col-md-6 description">
+                                    <label class="label-header">
+                                        Source
+                                    </label>
+
+                                    <span data-id="analysis-source" data-toggle="tooltip" data-placement="top" title="Source"></span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 description">
+                                    <label class="label-header">
+                                        Sampling rate
+                                    </label>
+
+                                    <span data-id="analysis-sampling-rate" data-toggle="tooltip" data-placement="top" title="Sampling rate"></span>
+                                </div>
+
+                                <div class="col-md-6 description">
+                                    <label class="label-header">
+                                        Tags
+                                    </label>
+
+                                    <span data-id="analysis-tags" data-toggle="tooltip" data-placement="top" title="Tags"></span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 description">
+                                    <label class="label-header">
+                                        Unit
+                                    </label>
+
+                                    <span data-id="analysis-unit" data-toggle="tooltip" data-placement="top" title="Unit"></span>
+                                </div>
+
+                                <div class="col-md-6 description">
+                                    <label class="label-header">
+                                        Contributor
+                                    </label>
+
+                                    <span data-id="analysis-contributor" data-toggle="tooltip" data-placement="top" title="Contributor"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-2 fixed-button-parent">
+                            <button class="btn btn-black-outline fixed-button" data-role="find-neighbours" id="">
+                                Find neighbours
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row active" id="target-node-analysis">
+                    <div class="col-md-12 analysis-details">
+                        <div class="row">
+                            <div class="col-md-4 description">
+                                <label class="label-header">
+                                    Name
+                                </label>
+
+                                <span data-id="target-node-name" data-toggle="tooltip" data-placement="top" title="Name"></span>
+                            </div>
+
+                            <div class="col-md-4 description">
+                                <label class="label-header">
+                                    Category
+                                </label>
+
+                                <span data-id="target-node-category" data-toggle="tooltip" data-placement="top" title="Category"></span>
+                            </div>
+
+                            <div class="col-md-4 description">
+                                <label class="label-header">
+                                    Tags
+                                </label>
+
+                                <span data-id="target-node-tags" data-toggle="tooltip" data-placement="top" title="Tags"></span>
+                            </div>
+                        </div>
+                        <div class="row" id="target-node-details">
+                            <div class="col-md-4 description">
+                                <label class="label-header">
+                                    Description
+                                </label>
+
+                                <span data-id="target-node-description" data-toggle="tooltip" data-placement="top" title="Description"></span>
+
+                            </div>
+
+                            <div class="col-md-4 description">
+                                <label class="label-header">
+                                    Source
+                                </label>
+
+                                <span data-id="target-node-source" data-toggle="tooltip" data-placement="top" title="Source"></span>
+                            </div>
+
+                            <div class="col-md-4 description">
+                                <label class="label-header">
+                                    Sampling rate
+                                </label>
+
+                                <span data-id="target-node-sampling-rate" data-toggle="tooltip" data-placement="top" title="Sampling rate"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 description">
+                                <label class="label-header">
+                                    Unit
+                                </label>
+
+                                <span data-id="target-node-unit" data-toggle="tooltip" data-placement="top" title="Unit"></span>
+                            </div>
+
+                            <div class="col-md-4 description">
+                                <label class="label-header">
+                                    Contributor
+                                </label>
+
+                                <span data-id="target-node-contributor" data-toggle="tooltip" data-placement="top" title="Contributor"></span>
+                            </div>
+                            <div class="col-md-4 description"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div id="target-node-container"></div>
+                    </div>
+
+                    <div class="col-md-12 analysis-details">
+                        <label class="header">
+                            Interesting Information
+                            <i id="interesting-info-tooltip" class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Hover over the segments below to learn more about how the time series compares to other time series contributed. <a href='/#!the-research#feature-set' target='_blank'>Learn more</a>"></i>
+                        </label>
+
+                        <div class="row m-l-0 m-r-0" id="traffic-lights"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>

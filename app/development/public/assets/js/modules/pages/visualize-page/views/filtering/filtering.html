@@ -1,0 +1,144 @@
+<div class="row text-xs-center">
+    <div class="col-md-12">
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-outline-info" id="filter-button">
+            Filter
+        </button>
+
+
+        <button type="button" class="btn btn-outline-info" id="export-button">
+            Export
+        </button>
+    </div>
+</div>
+
+<div class="row" id="filter-options" style="display: none;">
+    <div class="col-md-12" id="filter-content">
+        <div class="row">
+            <div class="col-md-12">
+                <label>
+                    Category
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" id="topLevelCategoryFilter">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12">
+                        <label class="custom-control custom-radio">
+                            <input id="any" name="radio" type="radio" class="custom-control-input" <% if(determineCheckedCategory("any")) { %>checked aria-checked="true"<% } %>>
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Both/Either</span>
+                        </label>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                        <label class="custom-control custom-radio">
+                            <input id="synthetic" name="radio" type="radio" class="custom-control-input" <% if(determineCheckedCategory("synthetic")) { %>checked aria-checked="true"<% } else { %>aria-checked="false"<% } %>>
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Synthetic</span>
+                        </label>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                        <label class="custom-control custom-radio">
+                            <input id="real" name="radio" type="radio" class="custom-control-input" <% if(determineCheckedCategory("real")) { %>checked aria-checked="true"<% } else { %>aria-checked="false"<% } %>>
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Real</span>
+                        </label>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label>
+                    Source
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" id="source-input" style="transition: width 0.3s ease-in-out;">
+
+                <input type="text" class="form-control" id="source" placeholder="Search for a source" aria-label="Input to search for a source">
+            </div>
+            <div class="col-md-3" style="display:none;" id="clear-button">
+                <button class="btn btn-outline-info" style="padding:10px;margin:0;" href="" data-role="clear-source">Clear</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" id="tags-container">
+                <label>
+                    Tags
+                </label>
+                <input type="text" class="form-control" id="tags" placeholder="Search for a tag" aria-label="Input to search for tags">
+
+                <div class="row">
+                    <div class="col-md-12" id="tag-container"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-xs-right">
+            <button class="btn btn-outline-info" id="apply-filter">Apply filter</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="row" id="export-options" style="display: none;">
+    <div class="col-md-12" id="export-content">
+
+        <div class="row">
+            <div id="export-mode">
+                <div class="col-md-12">
+                    <label>
+                        Select export type
+                    </label>
+                </div>
+
+                <div class="col-md-12">
+                    <label class="custom-control custom-radio">
+                        <input id="export-current" name="export-type" value="target-only" type="radio" class="custom-control-input"
+                               checked aria-checked="true">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">
+                        Export data for the current target node
+                    </span>
+                    </label>
+                </div>
+
+                <div class="col-md-12">
+                    <label class="custom-control custom-radio">
+                        <input id="export-all" name="export-type" value="all" type="radio" class="custom-control-input" aria-checked="false">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">
+                        Export data for all nodes shown on the page
+                    </span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-md-12 form-group">
+                    <label for="export-type">File format</label>
+                    <select name="export-type" id="export-type" class="form-control" value="">
+                        <option value="csv">CSV (zipped)</option>
+                        <option value="json">JSON</option>
+                    </select>
+            </div>
+        </div>
+
+        <div class="text-xs-right">
+            <button class="btn btn-outline-info" id="export">
+                Export
+            </button>
+        </div>
+
+    </div>
+</div>

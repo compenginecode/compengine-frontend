@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-block">
+        <h4 data-role="title" id="share">
+            <i data-icon class="icon-arrow-down"></i> Share
+        </h4>
+
+        <% var url = encodeURIComponent(window.location.href); %>
+
+        <!-- State management container -->
+        <section data-role="content" class="social-container">
+            <% if (facebookEnabled) { %>
+                <div id="share-fb" class="fb-share-button">
+                    <i class="fa fa-facebook-official fa-2x"></i>
+                </div>
+            <% } %>
+            <div id="share-twitter" class="twitter-share-button">
+                <a id="twitter-wjs" href="https://twitter.com/intent/tweet?text=<%- twitterText %>&hashtags=CompEngine&url=<%- url %>" target="_blank">
+                    <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<td style="width:80px;"><%- id %></td>
+<td class="<%- (editing ? 'editing' : '') %>">
+    <% if (editing) { %>
+        <input data-name-input type="text" value="<%- name %>" />
+    <% } else { %>
+        <%- name %>
+    <% } %>
+    <div class="error-text text-danger error-label-small"></div>
+</td>
+<td title="Used by <%- total %> timeseries">
+    <i class="fa fa-bar-chart"></i>
+    <%- total %>
+</td>
+<td style="<%- 'unapproved' === approvalStatus ? 'width:320px;' : '' %>">
+    <% if ('unapproved' === approvalStatus) { %>
+        <span class="tag tag-warning" style="margin:0;">
+            PENDING APPROVAL
+            <button data-approve class="btn btn-xs btn-success">Approve</button>
+            <button data-deny class="btn btn-xs btn-danger">Deny</button>
+        </span>
+    <% } %>
+</td>
+<td style="width:180px;">
+    <% if (editing) { %>
+        <button data-cancel class="btn btn-xs btn-default">Cancel</button>
+        <button data-save class="btn btn-xs btn-default">Save</button>
+    <% } else { %>
+        <button data-delete class="btn btn-xs btn-default">Delete</button>
+        <button data-edit class="btn btn-xs btn-default">Edit</button>
+    <% } %>
+</td>

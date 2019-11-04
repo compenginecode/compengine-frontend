@@ -1,0 +1,106 @@
+<div class="floating-sidepanel">
+    <div class="card">
+        <div class="card-block colour-keys">
+            <h4 data-role="title" id="colour-key"><i data-icon class="icon-arrow-down"></i> Colour key</h4>
+
+            <!-- State management container -->
+            <section data-role="content">
+                <div data-role="legend" id="legend-container"></div>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-block">
+            <h4 data-role="title" id="display-neighbours"><i data-icon class="icon-arrow-down"></i> Display neighbours</h4>
+
+            <section data-role="content">
+                <input id="neighbours-slider" type="range" class="form-control-range" />
+                <p>
+                    Current Value: <span id="neighbours-slider-value">20</span>
+                </p>
+
+                <div class="row text-xs-left vertical-center">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="custom-control custom-radio">
+                                    <input id="graphView" name="viewType" type="radio" <%- ('Data Visualization' === viewTypeSelected ? 'checked' : '') %> aria-checked="true"
+                                           class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">
+                                Graph view
+                            </span>
+                                </label>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="custom-control custom-radio">
+                                    <input id="listView" name="viewType" type="radio" <%- ('List View' === viewTypeSelected ? 'checked' : '') %> class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">
+                                List view
+                            </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="display: none;"><!-- Not showing this option anymore -->
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" id="show-annotations" class="custom-control-input" checked aria-checked="true">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">
+                                Show annotations
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-block" id="filtering-container"></div>
+    </div>
+
+    <% if (canContactContributor) { %>
+        <div class="card">
+            <div class="card-block" id="more-actions-container">
+                <div class="row text-xs-center">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-outline-info" data-toggle-contributor-modal>
+                            Contact Contributor
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+
+    <section  data-role="share-card">
+        <div class="card">
+            <div class="card-block">
+                <h4 data-role="title" id="share">
+                    <i data-icon class="icon-arrow-down"></i> Share
+                </h4>
+
+                <% var url = GLOBALS.appUrl + "/" + window.location.hash; %>
+
+                <!-- State management container -->
+                <section data-role="content" class="social-container">
+                    <% if (facebookEnabled) { %>
+                        <div id="share-fb" class="fb-share-button">
+                            <i class="fa fa-facebook-official fa-2x"></i>
+                        </div>
+                    <% } %>
+                    <div id="share-twitter" class="twitter-share-button">
+                        <a id="twitter-wjs" href="https://twitter.com/intent/tweet?text=<%- twitterText %>&hashtags=CompEngine&url=<%- url %>" target="_blank">
+                            <i class="fa fa-twitter fa-2x"></i>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,42 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="admin-bulk-uploaded-files-page-container">
+
+    <div class="container admin-bulk-uploaded-files">
+
+        <div class="container">
+
+            <div class="jumbotron">
+                <h3>Duplicate data checking</h3>
+                <p>This page shows any duplicate files within the CompEngine project.</p>
+            </div>
+
+            <input id="search-box" class="form-control" placeholder="Search by original name..." value="<%- searchText %>" />
+            <br>
+
+            <table class="table" id="duplicate-timeseries-table">
+                <thead class="thead-inverse">
+                <tr>
+                    <th data-sort="id" class="sorting <%- sortingBy === 'id' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Data id</th>
+                    <th data-sort="name" class="sorting <%- sortingBy === 'name' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Original (first version)</th>
+                    <th data-sort="duplicateCount" class="sorting <%- sortingBy === 'duplicateCount' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Number of duplicates</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+            </table>
+
+            <div id="bulk-upload-empty" style="display:none;"></div>
+
+            <br><br>
+        </div>
+    </div>
+
+
+    <section id="footer-container"></section>
+
+</section>

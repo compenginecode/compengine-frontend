@@ -1,0 +1,15 @@
+<% if (pageCount) { %>
+    <a href="/<%- baseUrl %>/<%- prevPage %>" data-prev-btn class="btn btn-xs btn-black-outline <%- (1 == currentPage ? 'disabled' : '') %>">&lt;&lt;</a>
+    <% _.each(_.range(1, pageCount + 1), function (page) { %>
+        <% if (currentPage - 1 == page && 1 != page && 2 != page) { %>
+            <span class="pagination-ellipsis">...</span>
+        <% } %>
+        <% if (1 == page || (currentPage - 1 == page) || currentPage == page || (currentPage + 1 == page) || pageCount == page) { %>
+            <a href="/<%- baseUrl %>/<%- page %>" data-page-btn="<%- page %>" class="btn btn-xs btn-black-outline <%- (page == currentPage ? 'active' : '') %>"><%- page %></a>
+        <% } %>
+        <% if (currentPage + 1 == page && pageCount != page && pageCount - 1 != page) { %>
+            <span class="pagination-ellipsis">...</span>
+        <% } %>
+    <% }) %>
+    <a href="/<%- baseUrl %>/<%- nextPage %>" data-next-btn class="btn btn-xs btn-black-outline <%- (pageCount == currentPage ? 'disabled' : '') %>">&gt;&gt;</a>
+<% } %>

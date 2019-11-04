@@ -1,0 +1,42 @@
+/** Local Vars **/
+$adminIndentSize: 75px;
+$genericMarginValue: 25px;
+
+#admin-login-page-container {
+  height: 100%;
+}
+
+.admin-login {
+  z-index: 2;
+  position: relative;
+  height: 100%;
+
+  &__login-form {
+    height: 100%;
+
+    /** Flex **/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &-header {
+      text-align: center;
+      margin-bottom: $genericMarginValue;
+    }
+
+    &-button {
+      float: right;
+    }
+
+    .card {
+      width: 500px;
+      min-width: 500px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    &-indent {
+      margin-left: $adminIndentSize;
+    }
+  }
+}

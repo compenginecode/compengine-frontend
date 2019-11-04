@@ -1,0 +1,81 @@
+.modals {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  font-family: $secondary-font;
+
+  .modal {
+    top: 10%;
+    overflow: auto;
+  }
+
+  .center-modal {
+    padding-top: 36px;
+    top: 0;
+  }
+
+  .modal-backdrop {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    .modal-title {
+      padding-left: 15px;
+    }
+
+    .close{
+      &>span {
+        line-height: 38px;
+        padding: 13px;
+      }
+
+      &:focus, &:hover, &:active {
+        border-radius: 100%;
+        outline: 0;
+      }
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      &:active, &:focus {
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 20px 30px;
+
+    .form-control {
+      border-width: 1px;
+      border-radius: 0;
+      font-size: .825rem;
+    }
+  }
+
+  .modal-footer {
+    .btn {
+      padding: 15px 25px;
+      margin: 0;
+
+      &+.btn {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .modal-dialog {
+    width: 720px;
+    max-width: 100%;
+  }
+}
+
+.sampling-rate {
+  margin-top: 0.5rem;
+}

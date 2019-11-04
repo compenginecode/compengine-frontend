@@ -1,0 +1,109 @@
+body, html {
+  height: calc(100% - 54px);
+  width: 100%;
+  background: $tertiary-color;
+}
+
+#local-body, .app, .app-region {
+  height: 100%;
+  width: 100%;
+
+  /**
+   * Marionette injects a div, we want to force it to inherit the height of its parent.
+   */
+  &>div {
+    height: inherit;
+  }
+}
+
+body {
+  font-family: $primary-font;
+}
+
+.background-div {
+  z-index: 1;
+  position: fixed;
+  opacity: 0.06;
+  // background: url(../test-background.jpg);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.content {
+  margin-top: 80px;
+}
+
+.content-fullscreen {
+  height: calc(100% - 6px);
+  min-height: calc(100% - 60px);
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.navbar-brand-sm {
+  float: right;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  margin-right: 1rem;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+
+  color: rgba(0,0,0,.8);
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/** Global focus **/
+:focus {
+  outline: none;
+}
+
+/** Account for footer height */
+#default {
+  padding-bottom: 60px;
+}
+
+/** Set the page container above the background div */
+.background-div ~ section:nth-of-type(2) {
+  position: relative;
+  z-index: 2;
+}
+
+.pagination-ellipsis {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.tooltip-inner {
+  max-width: 260px;
+}

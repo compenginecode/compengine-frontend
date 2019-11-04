@@ -1,0 +1,25 @@
+<td >
+    <% if ('pending' === status){ %>
+        <input data-id="<%- id %>" type="checkbox">
+    <% } %>
+</td>
+<td data-tooltip><%- name %></td>
+<td style="<% if ('pending'===status) {%>color:red; <% } %>"</td><%- status.charAt(0).toUpperCase() + status.substr(1) %></td>
+<td data-tooltip><%- contributor || 'N/A' %></td>
+<td data-tooltip><%- description %></td>
+<td data-tooltip><%- category %></td>
+<td data-tooltip><%- source || 'N/A' %></td>
+<td data-tooltip><%- tags.join(", ") %></td>
+<td data-tooltip><%= humanFileSize(size, true) %></td>
+<td data-tooltip><%- samplingUnit || 'N/A' %></td>
+<td data-tooltip><%- samplingRate || 'N/A' %></td>
+<td data-tooltip><%- id %></td>
+<td data-tooltip><%- timestampCreated %></td>
+<td style="text-overflow: inherit;">
+    <a href="/#!visualize/<%- id %>" target="_blank" class="btn btn-xs btn-default">Open</a>
+
+    <% if ('pending' === status){ %>
+        <button data-keep class="btn btn-xs btn-default">Approve</a>
+        <button data-remove class="btn btn-xs btn-default">Reject</a>
+    <% } %>
+</td>

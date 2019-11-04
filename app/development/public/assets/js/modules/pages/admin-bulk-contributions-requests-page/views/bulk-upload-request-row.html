@@ -1,0 +1,12 @@
+<th scope="row"><%= getFormattedRequestDate() %></th>
+<td style="<% if ('pending'===status) {%>color:red; <% } %>"</td><%- status.charAt(0).toUpperCase() + status.substr(1) %></td>
+<td><%- name %></td>
+<td><%- emailAddress %></td>
+<td><%- organisation %></td>
+<td><%= description.replace(/\n/g, "<br>") %></td>
+<td style="width:180px;">
+    <% if ('pending' === status){ %>
+        <button data-approve-btn class="btn btn-xs btn-default">Approve</button> <button data-deny-btn class="btn btn-xs btn-default">Deny</button>
+        <span class="error-text"></span>
+    <% } %>
+</td> 

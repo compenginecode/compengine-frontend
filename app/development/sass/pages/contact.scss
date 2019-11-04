@@ -1,0 +1,12 @@
+#contact-page-container {
+  #contact-form {
+    margin-top: 30px;
+  }
+  .form-group label {
+    line-height: 35px;
+
+    &[for="send-copy"] {
+      line-height: 70px;
+    }
+  }
+}

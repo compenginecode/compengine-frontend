@@ -1,0 +1,42 @@
+.footer {
+  /** We share the same z-index as the content. **/
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  width: 100%;
+  background: darken(#F4F4F4, 5%);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0;
+
+  /** Set the fixed height of the footer here **/
+  height: 60px;
+
+  /** Vertically center the text there **/
+  line-height: 60px;
+
+  /** Prevent footer from touching the sides **/
+  padding-left: 25px;
+
+  /** Fonts **/
+  font-family: $secondary-font;
+
+  .pull-right {
+    a {
+      color: $default-text-color;
+      text-decoration: none;
+
+      i {
+        padding: 0 10px;
+      }
+
+      &:hover {
+        color: lighten($default-text-color, 10%);
+      }
+
+    }
+  }
+
+  .version {
+    font-size: 12px;
+  }
+}

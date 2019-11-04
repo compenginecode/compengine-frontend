@@ -1,0 +1,225 @@
+<section id="thanks">
+    <div class="alert alert-info text-xs-center" role="alert">
+        <strong>Thanks!</strong> Contributing your data will help other people learn more about theirs.
+    </div>
+</section>
+
+<!-- Split each row into a section, so its a bit easier to navigate! -->
+<section id="first-row">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label" for="time-series-name">
+                    Time series name*
+                    <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Give your time series a name that contains the most important, high level information about your data, e.g., EEG_motorcortex_Parkinsons might be used to label an EEG time series taken from the motor cortex of an individual with Parkinson’s disease.">
+                    </i>
+                </label>
+
+                <input type="text" class="form-control form-control-danger" id="time-series-name" placeholder="Add a detailed, descriptive name"
+                    aria-label="Time series name (required)">
+                <span class="text-danger error-label-small">This field is required</span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group" id="source-container">
+                <label class="form-control-label" for="sources">
+                    Source
+                    <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Give a name for the source of the data. This could be the name of your lab, company, you, etc, e.g., BrainLabHarvard. Specifying an informative source will help you to search for your data later (and help others better understand connections to your data)."></i>
+                </label>
+                <input type="text" class="form-control" id="sources" placeholder="Select a source or enter your own" aria-label="Source">
+                <span class="text-danger error-label-small"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="second-row">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label w-100" for="category">
+                    Category*
+                    <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="The most high-level description of your data is the ‘category’ you assign it to. You can select a category from the hierarchical list provided (please use the most specific possible subcategory for your data), or if you believe your data fits better into a new category, please use the text box to suggest a new category."></i>
+                    <span class="pull-right" id="suggest-category">
+                        <small>
+                            Suggest new category
+                        </small>
+                        <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="If you want to suggest a new category, please click here."></i>
+                    </span>
+                </label>
+                <div class="row" id="suggest-category-toggle" style="display: none;">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="suggested-category" placeholder="Enter a name and select a parent category" aria-label="Suggested Category">
+                            <span class="text-danger error-label-small">This field is required</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="category" aria-label="Category (Required)"></div>
+                <span class="text-danger error-label-small">This field is required</span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label" for="tags">
+                    Tags
+                    <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Tags allow you to add additional keywords to your data that might help you to identify your data, in addition to its category and source."></i>
+                </label>
+                <input type="text" class="form-control" id="tags" placeholder="Select tags or suggest new ones" aria-label="Tags">
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="tag-container"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="third-row">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="form-control-label" for="description">
+                    Description
+                    <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="This is a chance to explain what the data is—what system was measured, how was it measured, how it was processed, etc. The more detail you give here, the more useful your contribution will be to others."></i>
+                </label>
+                <textarea id="description" class="form-control" placeholder="Explain your data in detail" aria-label="Description"></textarea>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="fourth-row" class="sampling-rate">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group form-group-center">
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="sampling-rate-present" aria-checked="false">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description" aria-label="Is there a sampling rate?">
+                        Is there a sampling rate?
+                        <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="CompEngine generically assumes that your data was measured from uniform sampling of some system through time. If you know what the sampling rate of your data is, please enter it here. This could be very fast for EEG data (2000 samples per second, or 2 kHz) or very slow for some yearly inflation rate data (1 sample per year).">
+                        </i>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-md-8" data-id="sampling-rate-present-true" style="display: none;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="sampling-rate" placeholder="Sampling rate (e.g. 44.01)" aria-label="Sampling rate">
+                        <span class="text-danger error-label-small">This field is required</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="sampling-unit" placeholder="Unit (e.g. KHz)" aria-label="Sampling unit">
+                        <span class="text-danger error-label-small">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<section id="fifth-row">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="form-group">
+                <label class="custom-control custom-checkbox">
+                    <!-- Real checkbox (Hidden for style) -->
+                    <input type="checkbox" class="custom-control-input" aria-checked="true" checked id="privacy-policy-agreed-checkbox">
+
+                    <!-- Custom checkbox -->
+                    <span class="custom-control-indicator"></span>
+
+                    <!-- Label -->
+                    <span class="custom-control-description" aria-label="I have read the Privacy Policy and I understand that my data will be in the public domain.">
+                        I have read the
+                        <a href="/#!privacy-policy" target="_blank">Privacy Policy</a> and I understand that my data will be in the public domain.
+                    </span>
+
+                    <span class="text-danger error-label-small align-left-privacy">This field is required</span>
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" aria-checked="false" id="contact-permission-checkbox">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description" aria-label="I allow other users to contact me. I understand that my email will never be displayed on the website.">
+                        I allow other users to contact me. I understand that my email won't be shown on the website.
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 ">
+
+            <div class="form-group" style="display: none">
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" aria-checked="false" id="aggregation-permission-checkbox">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description" aria-label="Notify me when data is uploaded that is similar to mine (weekly aggregated email).">
+                        Notify me when data is uploaded that is similar to mine (weekly aggregated email).
+                    </span>
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" id="contributor-information" style="display: none;">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label" for="contributor-information-name">Your name*</label>
+                <input type="text" class="form-control" id="contributor-information-name" placeholder="John Smith" aria-label="Your name (Required)"
+                />
+                <span class="text-danger error-label-small">This field is required</span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label" for="contributor-information-email-address">Your email address*</label>
+                <input type="text" class="form-control" id="contributor-information-email-address" placeholder="john@email.com" aria-label="Your email address (Required)"
+                />
+                <span class="text-danger error-label-small">This field is required</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="submission-row">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <button type="button" data-action="contribute" class="btn btn-lg btn-block btn-primary">Contribute</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-danger" role="alert" fatal-error style="display: none;"></div>
+        </div>
+    </div>
+
+</section>

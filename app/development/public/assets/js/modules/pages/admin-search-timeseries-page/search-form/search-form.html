@@ -1,0 +1,116 @@
+<!-- Split each row into a section, so its a bit easier to navigate! -->
+<section id="first-row">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label" for="time-series-name">
+                    Name of data
+                    <i class="fa fa-question-circle" aria-hidden="true"
+                       data-toggle="tooltip" data-placement="top" title="Filter by time series name, partial matches allowed.">
+                    </i>
+                </label>
+                <input type="text" class="form-control form-control-danger" id="time-series-name" placeholder="Filter by name" aria-label="Time series name (required)">
+                <span class="text-danger error-label-small">Error</span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label" for="description">Description keyword</label>
+                <input id="description" class="form-control" placeholder="Filter by description" aria-label="Description">
+                <span class="text-danger error-label-small">Error</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="second-row">
+    <div class="row">
+        <div class="col-md-12" data-id="sampling-rate-present-true">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="sampling-rate">Sampling rate</label>
+                        <input type="text" class="form-control" id="sampling-rate" placeholder="Sampling rate (e.g. 44.01)" aria-label="Sampling rate">
+                        <span class="text-danger error-label-small">Error</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="sampling-unit">Sampling unit</label>
+                        <input type="text" class="form-control" id="sampling-unit" placeholder="Unit (e.g. KHz)" aria-label="Sampling unit">
+                        <span class="text-danger error-label-small">Error</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="third-row" class="sampling-rate">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group" id="contributor-container">
+                <label class="form-control-label" for="contributor-information-name">Contributor</label>
+                <input type="text" class="form-control" id="contributor-information-name" placeholder="Filter by contributor" aria-label="Contributor">
+                <span class="text-danger error-label-small"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group" id="source-container">
+                <label class="form-control-label" for="sources">Source</label>
+                <input type="text" class="form-control" id="sources" placeholder="Filter by source" aria-label="Source">
+                <span class="text-danger error-label-small"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="fourth-row">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label w-100" for="category">Category</label>
+                <div id="category" aria-label="Category"></div>
+                <span class="text-danger error-label-small"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label" for="start-date">Upload date start</label>
+                <input type="text" class="form-control" id="start-date" placeholder="Filter by date range" aria-label="Start Date">
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="end-date">Upload date end</label>
+                <input type="text" class="form-control" id="end-date" placeholder="Filter by date range" aria-label="End Date">
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="tags">Tags</label>
+                <input type="text" class="form-control" id="tags" placeholder="Filter by zero or more tags" aria-label="Tags">
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="tag-container"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="submission-row">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <button type="button" data-action="search" class="btn btn-lg btn-block btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-danger" role="alert" fatal-error style="display: none;"></div>
+        </div>
+    </div>
+
+</section>

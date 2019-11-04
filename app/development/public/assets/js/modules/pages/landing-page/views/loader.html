@@ -1,0 +1,63 @@
+<div class="data-uploading">
+    <h3>
+        We're computing time-series features and comparing your time-series data against our existing library of <%- timeSeriesCount %> other time series in our library!
+    </h3>
+
+    <p>
+        What you’re about to see is a network visualization of your data and how it relates to a set of the most similar types of time series that are already in our CompEngine library.
+        Have an explore and please consider contributing your data to grow our library.
+    </p>
+
+    <section id="upload-occuring">
+        <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="2"></circle>
+        </svg>
+
+        <p class="lead" id="comparison-status-text">Uploading file</p>
+
+        <p>
+            <button href="#!visubuttonlize" id="view-analysis" class="btn btn-primary" disabled>Ready to explore</button>
+            <a href="/" class="btn btn-default" style="margin-left: 10px;">Start again</a>
+        </p>
+
+        <section id="results">
+            <table style="margin: 0 auto; margin-bottom: 50px; display: none;">
+                <tr>
+                    <th style="width: 200px; text-align: center;">Number</th>
+                    <th style="width: 200px; text-align: center;">Value</th>
+                </tr>
+            </table>
+        </section>
+    </section>
+
+    <section id="upload-encountered-error" style="display: none;">
+        <div class="error-container">
+            <div class="card card-block">
+
+                <h4 class="card-title">
+                    Oh no...
+                </h4>
+
+                <p class="card-text"></p>
+            </div>
+
+            <div class="error-btn-row">
+                <a class="btn btn-black margin-right-20" button-action="try-another">
+                    Try another
+                </a>
+                <a class="btn btn-black-outline" button-action="retry">
+                    Retry
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <p>
+        Just so you know, only the first column of data is read from uploaded spreadsheets.
+    </p>
+
+    <p style="padding-bottom:0;">
+        Spread the word about CompEngine (don't worry, you won't lose your window).
+    </p>
+</div>

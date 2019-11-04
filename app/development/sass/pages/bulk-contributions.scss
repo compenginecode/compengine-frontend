@@ -1,0 +1,110 @@
+#recaptcha-container > div {
+  margin: auto;
+}
+
+#previews {
+  .card {
+    z-index: 0;
+  }
+
+  .dz-success .card-block {
+    // background-color: #aaffaa;
+  }
+
+  [data-dz-name] {
+    line-height: 26px;
+  }
+
+  [data-dz-requeue] {
+    display: none;
+  }
+
+  .dz-error .card-block {
+     background-color: $alert-danger-bg;
+    [data-dz-errormessage] {
+      color: $danger-color;
+    }
+    [data-dz-requeue] {
+      display: initial;
+    }
+  }
+
+  .dz-error.dz-pre-error .card-block [data-dz-requeue] {
+    display: none;
+  }
+
+  .dz-processing [data-dz-remove] {
+    display: none !important;
+  }
+
+  .dz-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    .dz-upload {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: $alert-success-bg;
+    }
+  }
+}
+
+#meta {
+  $scrollbar-track: #efefef;
+
+  #category {
+    height: 199px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    /**
+     * Fix for perfect scrollbar, it would sit outside of the element if it didn't have a position set
+     * Which kind of defeats the purpose of its main motto (below)
+     * "There should be no css change on any original element."
+     */
+    position: relative;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  #description {
+    resize: none;
+  }
+
+  #suggest-category {
+
+    &>small {
+      cursor: pointer;
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+
+  .tag {
+    margin-right: 5px;
+  }
+
+  .error-label-small {
+    display: none;
+    font-size: 14px;
+
+    &.align-left-privacy {
+      margin-left: 25px;
+    }
+  }
+
+  .sampling-rate {
+    min-height: 50px;
+  }
+}

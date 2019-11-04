@@ -1,0 +1,8 @@
+/**
+ *  Prompts are lightweight modals that inherit many characteristics from modals but are presented differently.
+ *
+ * @type {*}
+ * @extends Backbone.Modals
+ * @namespace Prompts
+ * @see Modals
+ */

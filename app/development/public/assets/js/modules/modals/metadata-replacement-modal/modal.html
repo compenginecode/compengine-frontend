@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            Replace usage of entity being denied
+        </p>
+    </div>
+
+    <form id="form" style="width:100%;">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="replacementId">
+                    Replacement <%- (replacementRequired ? '*' : '') %>
+                </label>
+                <input class="form-control" type="text" id="replacementId" name="replacementId" />
+                <% if (!replacementRequired) { %>
+                    <span class="help-text">Replacement is optional</span>
+                <% } %>
+                <div class="text-danger error-label-small" data-error="replacementId" style="display: none"></div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <button class="btn btn-black w-100" type="submit" id="submit">Replace and deny</button>
+                <div class="text-success error-label-small" data-success="form" style="text-align:center; display:hidden;"></div>
+            </div>
+        </div>
+    </form>
+
+</div>

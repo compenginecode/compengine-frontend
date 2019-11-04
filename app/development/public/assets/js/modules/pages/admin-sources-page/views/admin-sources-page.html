@@ -1,0 +1,45 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="admin-bulk-uploaded-files-page-container">
+
+    <div class="container admin-bulk-uploaded-files">
+
+        <div class="container">
+
+            <div class="jumbotron">
+                <h3>Source Field Options</h3>
+                <p>
+                    Here you can edit the source values used across all the time series
+                </p>
+            </div>
+
+            <form id="source-form">
+                <input data-name-input type="text" style="width:300px;" placeholder="Source name">
+                <button type="submit" class="btn btn-xs btn-default">Add Source</button>
+            </form>
+
+            <span class="error-text text-danger error-label-small" style="display: none;"></span>
+
+            <br />
+
+            <input id="search-box" class="form-control" placeholder="Search by name..." value="<%- searchText %>" />
+            <br>
+
+            <table class="table table-editable" id="sources-table">
+                <thead class="thead-inverse"></thead>
+            </table>
+
+            <div id="pagination-links"></div>
+            <br><br><br>
+        </div>
+    </div>
+
+
+    <section id="footer-container"></section>
+
+</section>

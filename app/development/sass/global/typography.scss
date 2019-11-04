@@ -1,0 +1,104 @@
+/**
+ * Responsive Typography
+ */
+@include media-breakpoint-up(xs) {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  h1 {
+    font-size: 4.5rem;
+    line-height: 5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  h1 {
+    font-size: 5.5rem;
+    line-height: 6.5rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  h1 {
+    font-size: 90px;
+    line-height: 110px;
+  }
+}
+
+/** Static Typography **/
+h1, h2 {
+  color: $primary-color;
+  font-weight: 100;
+}
+
+h3, h4 {
+  color: $primary-color;
+  font-weight: 300;
+}
+
+p{
+  font-size: 14px;
+  line-height: 24px;
+
+  &.bold {
+    font-family: $secondary-font;
+    color: $secondary-color;
+    font-weight: bold;
+
+  }
+  &.lead {
+    font-family: $secondary-font;
+    font-weight: 400;
+    color: $secondary-color;
+  }
+
+  &.secondary-lead {
+    font-weight: 100;
+    font-size: 1.175rem;
+  }
+}
+
+.carousel-caption {
+  h1, h2, h3, h4, h5 {
+    color: $tertiary-color;
+  }
+}
+
+.secondary-lead {
+  @extend .lead;
+}
+
+ul{
+  font-size: 14px;
+}

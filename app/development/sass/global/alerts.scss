@@ -1,0 +1,28 @@
+.alert {
+  font-size: 0.9rem;
+
+  &-info {
+    background: $brand-primary;
+    border-color: rgba( 0, 0, 0, 0.05 );
+    color: #FFFFFF;
+    padding: 5px 15px;
+    border-radius: 0;
+  }
+
+  &-danger {
+    padding: 5px 15px;
+    border-radius: 0;
+  }
+
+  &-fadeIn {
+    position: fixed;
+    top: -40px;
+    transition: transform 0.6s ease-in-out;
+    transform: translate(35vw, 0);
+    z-index: 3;
+
+    &--show {
+      transform: translate(35vw, 110px);
+    }
+  }
+}

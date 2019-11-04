@@ -1,0 +1,55 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="admin-bulk-uploaded-files-page-container">
+
+    <div class="container admin-bulk-uploaded-files">
+
+        <div class="container">
+
+            <div class="jumbotron">
+                <h3>Data Management</h3>
+                <p>This page allows you to filter and remove data within CompEngine</p>
+            </div>
+
+            <div id="search-form"></div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                    <div class="pull-left">
+                        <button type="button" data-action="select-all" class="btn btn-lg btn-block btn-primary"><i class="fa fa-square"></i> Select all</button>
+                        <button type="button" data-action="unselect-all" class="btn btn-lg btn-block btn-primary" style="display: none;"><i class="fa fa-check-square"></i> Clear selection</button>
+                    </div>
+                    <div class="pull-right">
+                        <button type="button" data-action="delete-selected" class="btn btn-lg btn-block btn-primary">Delete selected</button>
+                    </div>
+                    <div class="pull-right" style="margin-right: 10px;">
+                        <button type="button" data-action="delete-all" class="btn btn-lg btn-block btn-default"><i class="fa fa-exclamation-triangle"></i> Delete all matching search</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-table-container">
+                <table class="table admin-table" id="search-timeseries-table">
+                    <thead class="thead-inverse"></thead>
+                </table>
+            </div>
+
+            <div id="no-data"></div>
+
+            <div id="pagination-links"></div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+    <section id="footer-container"></section>
+
+</section>

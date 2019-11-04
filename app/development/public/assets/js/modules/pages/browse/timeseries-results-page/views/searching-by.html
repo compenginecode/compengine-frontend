@@ -1,0 +1,14 @@
+Browsing by all time series within the "<%- searchingBy.match %>" <%- searchingBy.type %> <br />
+<div class="row">
+    <div class="col-md-4">
+        <select name="export-type" id="export-type" class="form-control" value="" style="margin-top: 7px;">
+            <option value="csv">CSV (zipped)</option>
+            <option value="json">JSON</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <a data-role="download-results" class="btn btn-black-outline" style="padding: 10px;">Download all on page</a>
+    </div>
+</div>
+
+<small><a href="/#!browse/<%- searchingBy.type %>">Go back</a></small>

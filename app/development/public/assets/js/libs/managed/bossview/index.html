@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BossView - Manage your Marionette.js sub-views like a boss!</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="public/css/style.css"/>
+</head>
+<body>
+<header class="boss-header">
+    <div class="boss-header_inner-container">
+        <a href="#home">
+            <div class="boss-header_logo">
+                <i class="boss-header_logo-icon icon-headphones"></i> <span class="boss-header_name">Boss<strong>View</strong></span>
+            </div>
+        </a>
+        <nav class="boss-header_nav">
+            <ul>
+                <li class="boss-header_nav-item"><a href="#about">about</a></li>
+                <li class="boss-header_nav-item"><a href="#download">download</a></li>
+                <li class="boss-header_nav-item"><a href="#examples">examples</a></li>
+                <li class="boss-header_nav-item"><a href="#docs">docs</a></li>
+                <li class="boss-header_nav-item boss-header_nav-icon"><a href="https://github.com/justspamjustin/BossView" title="View on github."><i class="icon-github-alt"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="boss-hero" id="home">
+    <div class="boss-hero_inner-container">
+        <img src="public/img/boss.png" class="boss-hero_boss-image"/>
+        <h1 class="boss-hero_punchline">Like a <strong>Boss!</strong></h1>
+        <h2 class="boss-hero_drumroll">Manage your Marionette.js sub-views...</h2>
+    </div>
+</section>
+<section class="boss-about" id="about">
+    <div class="boss-about_social-media-btns">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="justspamjustin" data-lang="en">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        <a href="https://twitter.com/justspamjustin" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @justspamjustin</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        <iframe src="http://ghbtns.com/github-btn.html?user=justspamjustin&repo=BossView&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+    </div>
+    <p>
+        Boss<strong>View</strong>, an extension of Marionette.js, is an abstraction that manages events and rendering of sub-views. Using sub-views is such a common pattern, you will never stop using Boss<strong>View</strong>.
+    </p>
+</section>
+<section class="boss-download" id="download">
+    <div class="boss-download_downloads-row">
+        <a href="http://justspamjustin.github.io/BossView/Marionette.BossView.js"><button class="boss-button boss-header_download-button"><i class="icon-file-text boss-download_download-button-icon"></i> Download <span class="boss-download_download-button-size">(dev 8k)</span></button></a>
+        <a href="http://justspamjustin.github.io/BossView/Marionette.BossView.AMD.js"><button class="boss-button boss-header_download-button"><i class="icon-file-text boss-download_download-button-icon"></i> Download <span class="boss-download_download-button-size">(amd dev 9k)</span></button></a>
+    </div>
+    <div class="boss-download_downloads-row">
+        <a href="http://justspamjustin.github.io/BossView/Marionette.BossView.min.js"><button class="boss-button boss-header_download-button"><i class="icon-file-text-alt boss-download_download-button-icon"></i> Download <span class="boss-download_download-button-size">(min 3k)</span></button></a>
+        <a href="http://justspamjustin.github.io/BossView/Marionette.BossView.AMD.min.js"><button class="boss-button boss-header_download-button"><i class="icon-file-text-alt boss-download_download-button-icon"></i> Download <span class="boss-download_download-button-size">(amd min 3k)</span></button></a>
+    </div>
+    <div class="boss-download_dependencies">Dependencies: jQuery, underscore.js, backbone.js and marionette.js.</div>
+</section>
+<section class="boss-examples" id="examples">
+    <h2 class="boss-examples_heading"><i class="icon-code"></i> Examples</h2>
+    <div class="boss-examples_example-row">
+        <div class="boss-examples_example-container">
+            <div class="boss-examples_example-header-title">Marionette.js Standalone</div>
+        </div>
+        <div class="boss-examples_example-container">
+            <div class="boss-examples_example-header-title">Marionette.js w/ BossView</div>
+        </div>
+    </div>
+
+    <div class="boss-examples_example-row">
+        <div class="boss-examples_example-container">
+            <div class="boss-examples_example-title">Render a Sub-view</div>
+            <div class="boss-examples_example boss-examples_render-example">
+                <script src="https://gist.github.com/justspamjustin/6355830.js"></script>
+            </div>
+        </div>
+        <div class="boss-examples_example-container">
+            <div class="boss-examples_example boss-examples_render-example">
+                <script src="https://gist.github.com/justspamjustin/6355982.js"></script>
+            </div>
+        </div>
+    </div>
+    <div class="boss-examples_example-row">
+        <div class="boss-examples_example-container">
+            <div class="boss-examples_example-title">Render a Sub-view and listen for events</div>
+            <div class="boss-examples_example boss-examples_render-event-example">
+                <script src="https://gist.github.com/justspamjustin/6356338.js"></script>
+            </div>
+        </div>
+        <div class="boss-examples_example-container">
+            <div class="boss-examples_example boss-examples_render-event-example">
+                <script src="https://gist.github.com/justspamjustin/6357689.js"></script>
+            </div>
+        </div>
+    </div>
+    <div class="boss-examples_example-row">
+        <div class="boss-examples_example-container">
+            <div class="boss-examples_example-title">Render a Sub-view in a Containing Element</div>
+            <div class="boss-examples_example boss-examples_render-container-example">
+                <script src="https://gist.github.com/justspamjustin/6357778.js"></script>
+            </div>
+        </div>
+        <div class="boss-examples_example-container">
+            <div class="boss-examples_example boss-examples_render-container-example">
+                <script src="https://gist.github.com/justspamjustin/6357819.js"></script>
+            </div>
+        </div>
+    </div>
+    <div class="boss-examples_example-header-title">CodePen Example</div>
+    <div class="boss-examples_codepen-example">
+        <p data-height="268" data-theme-id="856" data-slug-hash="yleij" data-user="justspamjustin" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/justspamjustin/pen/yleij'>yleij</a> by Justin (<a href='http://codepen.io/justspamjustin'>@justspamjustin</a>) on <a href='http://codepen.io'>CodePen</a></p>
+        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+    </div>
+
+</section>
+<section id="docs" class="boss-docs">
+    <h2 class="boss-examples_heading"><i class="icon-gears"></i> Docs</h2>
+    <div class="boss-docs_item">
+        <div class="boss-docs_item-heading">BossView Basics</div>
+        <div class="boss-docs_item-summary">
+            BossView is an extension of the Marionette.ItemView.  You have access to all of the same methods that Marionette.ItemView has.
+        </div>
+    </div>
+
+    <div class="boss-docs_item">
+        <div class="boss-docs_item-heading"><i class="icon-gear"></i> subViews</div>
+        <div class="boss-docs_item-summary">
+            Specify your views in the 'subViews' object.  BossView will automatically render these sub-views for you when the BossView is rendered.  The key becomes the instance of the subView on the
+            parent view.  On the right, you can either specify a function and initialize your view manually,
+            returning the instance, or just specify the view class and BossView will initialize it for you.
+        </div>
+        <div class="boss-docs_item-example">
+            <script src="https://gist.github.com/justspamjustin/6359269.js"></script>
+        </div>
+    </div>
+
+    <div class="boss-docs_item">
+        <div class="boss-docs_item-heading"><i class="icon-gear"></i> subViewEvents</div>
+        <div class="boss-docs_item-summary">
+            For the sake of decoupling views, subViews should only communicate to its parent view through events.  The 'subViewEvents' object
+            allows you to treat your subView events in the same way you would handle dom events with the
+            'events' object.  If you want to listen to all subviews for an event, just use the '*' character
+            for the subViewName.  Also, BossView will bubble each of the events of the sub-views by prepending the name of the subview (ie. 'someSubView:render').
+        </div>
+        <div class="boss-docs_item-example">
+            <script src="https://gist.github.com/justspamjustin/6359428.js"></script>
+        </div>
+    </div>
+
+    <div class="boss-docs_item">
+        <div class="boss-docs_item-heading"><i class="icon-gear"></i> subViewContainers</div>
+        <div class="boss-docs_item-summary">
+            Sometimes you will want to render your subViews inside of a containing element of your BossView.
+             Do this by implementing the 'subViewContainers' object.  The key should correspond the name of the
+             subView that you specified in the 'subViews' object.  The property should be the jQuery selector of the
+             containing element.
+        </div>
+        <div class="boss-docs_item-example">
+            <script src="https://gist.github.com/justspamjustin/6359552.js"></script>
+        </div>
+    </div>
+
+    <div class="boss-docs_item">
+        <div class="boss-docs_item-heading"><i class="icon-gear"></i> mainSubViewContainer</div>
+        <div class="boss-docs_item-summary">
+            Sometimes you may want to have all of the subViews render inside one parent div without
+            having to specify the same subView container for each subView.  To do this, just specify a
+            jQuery selector for the 'mainSubViewContainer' property.  All subViews will be rendered in the container
+            except any subViews that have been specified in 'subViewContainers'.
+        </div>
+        <div class="boss-docs_item-example">
+            <script src="https://gist.github.com/justspamjustin/6359622.js"></script>
+        </div>
+    </div>
+
+    <div class="boss-docs_item">
+        <div class="boss-docs_item-heading"><i class="icon-gear"></i> subViewRenderConditions</div>
+        <div class="boss-docs_item-summary">
+            Sometimes you may want to only render your subViews under some condition.  In this case, provide
+            a 'subViewRenderConditions' object.  Define a function that
+            returns truthy or falsey.
+        </div>
+        <div class="boss-docs_item-example">
+            <script src="https://gist.github.com/justspamjustin/6359706.js"></script>
+        </div>
+    </div>
+</section>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="public/js/scrollspy.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-21007774-14', 'justspamjustin.github.io');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

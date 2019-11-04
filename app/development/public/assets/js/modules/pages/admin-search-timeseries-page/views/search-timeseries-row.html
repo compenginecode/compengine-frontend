@@ -1,0 +1,19 @@
+<th>
+    <input name="should-delete" value="<%- id %>" type="checkbox">
+    <span class="error-text"></span>
+</th>
+
+<td><%- name %></td>
+<td><%- contributor || 'N/A' %></td>
+<td><%- description %></td>
+<td><%- category %></td>
+<td><%- source || 'N/A' %></td>
+<td><%- tags.join(", ") %></td>
+<td><%= humanFileSize(size, true) %></td>
+<td><%- samplingUnit || 'N/A' %></td>
+<td><%- samplingRate || 'N/A' %></td>
+<td><%- id %></td>
+<td><%- timestampCreated %></td>
+<td>
+    <a href="/#!visualize/<%- id %>" target="_blank" class="btn btn-xs btn-default">Open</a>
+</td>

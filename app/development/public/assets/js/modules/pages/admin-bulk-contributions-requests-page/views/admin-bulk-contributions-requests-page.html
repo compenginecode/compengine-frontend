@@ -1,0 +1,50 @@
+<!-- Add a bit of spice to the page -->
+<div class="background-div"></div>
+
+<!-- Nice and contained navigation -->
+<section id="navigation-container"></section>
+
+<!-- Landing page content -->
+<section id="admin-bulk-contributions-requests-page-container">
+
+    <div class="container admin-bulk-contributions-requests">
+
+        <div class="container">
+
+            <div class="jumbotron">
+                <h3>Bulk Contribution Requests.</h3>
+                <p>This page shows all of the bulk contribution requests made by visitors of the site.</p>
+            </div>
+
+            <h4>Requests</h4>
+            <p>
+                Below are all the outstanding bulk contribution requests.
+                Approving a request will send a timed link to the visitor allowing
+                them to bulk contribute data for the 7 days following approval.
+            </p>
+
+            <input id="search-box" class="form-control" placeholder="Search by request date, status, name, email, organisation or description..." value="<%- searchText %>" />
+            <br>
+
+            <table class="table" id="bulk-upload-request-table" style="display: none;">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th data-sort="requestDate" class="sorting <%- sortingBy === 'requestDate' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Request Date</th>
+                        <th data-sort="status" class="sorting <%- sortingBy === 'status' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Status</th>
+                        <th data-sort="name" class="sorting <%- sortingBy === 'name' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Name</th>
+                        <th data-sort="email" class="sorting <%- sortingBy === 'email' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Email</th>
+                        <th data-sort="organisation" class="sorting <%- sortingBy === 'organisation' ? (sortDirection === 'ASC' ? 'sorting_asc' : 'sorting_desc') : '' %>">Organisation</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <div id="bulk-upload-empty"></div>
+        </div>
+    </div>
+
+
+    <section id="footer-container"></section>
+
+</section>

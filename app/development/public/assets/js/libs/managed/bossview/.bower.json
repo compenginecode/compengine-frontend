@@ -1,0 +1,12 @@
+{
+  "name": "bossview",
+  "homepage": "https://github.com/CraigAtWork/BossView",
+  "_release": "0f3a18307d",
+  "_resolution": {
+    "type": "commit",
+    "commit": "0f3a18307d690aeb3278e5e435e328040f717171"
+  },
+  "_source": "https://github.com/CraigAtWork/BossView.git",
+  "_target": "0f3a18307d690aeb3278e5e435e328040f717171",
+  "_originalSource": "https://github.com/CraigAtWork/BossView.git"
+}

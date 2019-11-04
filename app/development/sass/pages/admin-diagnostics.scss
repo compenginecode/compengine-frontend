@@ -1,0 +1,46 @@
+/** Local Vars **/
+$adminDiagnosticsIndentSize: 75px;
+$marginTopForEachElement: 25px;
+
+#admin-diagnostics-page-container {
+  height: 100%;
+}
+
+.admin-diagnostics {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  z-index: 2;
+  position: relative;
+
+  &__processes {
+    margin-top: $marginTopForEachElement;
+
+    &-indent {
+      margin-left: $adminDiagnosticsIndentSize;
+    }
+
+    &-label {
+      margin-bottom: 0;
+      margin-top: 0.2rem;
+    }
+  }
+
+  &__jobs {
+    margin-top: $marginTopForEachElement;
+  }
+
+  &__statistics {
+    margin-top: $marginTopForEachElement;
+
+    &-indent {
+      margin-left: $adminDiagnosticsIndentSize;
+    }
+  }
+}
+
+.admin-metric{
+  background: #eceeef;
+  height: 200px;
+  border: solid 1px #cecece;
+  text-align: center;
+}

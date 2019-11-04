@@ -1,0 +1,14 @@
+#error-page-container {
+  height: inherit;
+  position: relative;
+  z-index: 2;
+}
+
+.error-full-screen {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}

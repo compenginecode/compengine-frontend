@@ -1,0 +1,69 @@
+<!-- Navigation -->
+<nav class="navbar navbar-fixed-top navbar-inverse imperial-nav">
+    <!-- Responsive Header -->
+    <p class="navbar-brand-sm pull-right hidden-sm-up">
+        CompEngine.
+    </p>
+
+    <!-- Responsive Nav Toggle -->
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapse-nav">
+        ☰
+    </button>
+
+    <!-- Default navigation -->
+    <div class="collapse navbar-toggleable-xs" id="collapse-nav">
+        <a class="navbar-brand hidden-xs-down" href="/#!" id="navigation-title" tabindex="1">
+            CompEngine.
+        </a>
+
+        <form class="navbar-form pull-right" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control pull-right search-input" placeholder="Search">
+                <span class="input-group-btn search-button pull-xs-right" tabindex="5">
+                    <button type="submit" class="btn btn-default" role="search-button">
+                        <i class="fa fa-search" role="search"></i> <span class="sr-only">Search</span>
+                    </button>
+                </span>
+            </div>
+        </form>
+
+        <ul class="nav navbar-nav pull-md-right" role="links">
+            <li class="nav-item active">
+                <a class="nav-link" href="/#!" tabindex="2">
+                    Home <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" tabindex="3">
+                    About
+                </a>
+                <div class="dropdown-menu" aria-labelledby="aboutDropDown">
+                    <a class="dropdown-item" href="/#!about">
+                        About CompEngine
+                    </a>
+                    <a class="dropdown-item" href="/#!the-research">
+                        The Research
+                    </a>
+                    <a class="dropdown-item" href="/#!the-public-api">
+                        The Public API
+                    </a>
+                    <a class="dropdown-item" href="/#!contact">
+                        Contact us
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/#!contribution-info" tabindex="4">
+                    Contribute
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/#!browse" tabindex="5">
+                    Explore
+                </a>
+            </li>
+
+            <%= administrationNav %>
+        </ul>
+    </div>
+</nav>
