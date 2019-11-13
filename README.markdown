@@ -5,7 +5,7 @@ It is written using `Backbone.js` and `Marionette.js`, and compiled via `R.js`.
 
 ## How to use
 Simply download it, run `npm install` and `bower install`.
-Then setup the configuration settings inside `/server/build/` and then when inside the server folder, `run node server.js --bundle build`.
+Then setup the configuration settings inside `/server/build/` and then when inside the server folder, run `node server.js --bundle build`.
 
 ## How to build
 Run `grunt build` to build the application.
